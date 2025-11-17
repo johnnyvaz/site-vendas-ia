@@ -1,0 +1,532 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Vendas.IA Contact Form API",
+    "description": "API for processing enhanced contact forms with LGPD compliance",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Johnny Vaz",
+      "email": "contato@johnnyvaz.com.br"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://vendas.ia.br/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/contact": {
+      "post": {
+        "summary": "Submit contact form",
+        "description": "Process enhanced contact form with progressive data collection and LGPD compliance",
+        "operationId": "submitContactForm",
+        "tags": ["Contact"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactFormRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Form submitted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactFormResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contact/validate": {
+      "post": {
+        "summary": "Validate form data",
+        "description": "Validate form data without submitting (for progressive validation)",
+        "operationId": "validateContactForm",
+        "tags": ["Contact"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartialContactForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ContactFormRequest": {
+        "type": "object",
+        "required": ["personalInfo", "consent", "metadata"],
+        "properties": {
+          "personalInfo": {
+            "$ref": "#/components/schemas/PersonalInfo"
+          },
+          "businessInfo": {
+            "$ref": "#/components/schemas/BusinessInfo"
+          },
+          "interests": {
+            "$ref": "#/components/schemas/InterestInfo"
+          },
+          "consent": {
+            "$ref": "#/components/schemas/ConsentInfo"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/FormMetadata"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Optional additional message"
+          }
+        }
+      },
+      "PersonalInfo": {
+        "type": "object",
+        "required": ["name", "email", "phone"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100,
+            "pattern": "^[a-zA-ZÀ-ÿ\\s]+$",
+            "description": "Full name (first and last name required)"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 255,
+            "description": "Business email address"
+          },
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+55\\s?\\(?[1-9][0-9]\\)?\\s?9?[0-9]{4}-?[0-9]{4}$",
+            "description": "Brazilian phone number with country code"
+          },
+          "position": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Job title or position"
+          },
+          "linkedinUrl": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://([a-z]{2,3}\\.)?linkedin\\.com/.*$",
+            "description": "LinkedIn profile URL"
+          }
+        }
+      },
+      "BusinessInfo": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 200,
+            "description": "Company name"
+          },
+          "website": {
+            "type": "string",
+            "format": "uri",
+            "description": "Company website"
+          },
+          "industry": {
+            "type": "string",
+            "enum": [
+              "tecnologia",
+              "servicos-financeiros",
+              "saude",
+              "educacao",
+              "varejo",
+              "manufatura",
+              "consultoria",
+              "imobiliario",
+              "marketing",
+              "outros"
+            ]
+          },
+          "size": {
+            "type": "string",
+            "enum": ["1-10", "11-50", "51-200", "201-1000", "1000+"]
+          },
+          "revenue": {
+            "type": "string",
+            "enum": [
+              "under-500k",
+              "500k-2m",
+              "2m-10m",
+              "10m-50m",
+              "50m+"
+            ],
+            "description": "Annual revenue in BRL"
+          },
+          "currentTools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 10,
+            "description": "Current sales/marketing tools"
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Primary business location in Brazil"
+          }
+        }
+      },
+      "InterestInfo": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["leads-rapido", "disparo-rapido", "sdr-virtual", "custom-solution"]
+            },
+            "minItems": 1,
+            "description": "Products of interest"
+          },
+          "primaryGoal": {
+            "type": "string",
+            "enum": [
+              "increase-leads",
+              "improve-conversion",
+              "automate-processes",
+              "reduce-costs",
+              "scale-sales-team"
+            ]
+          },
+          "timeline": {
+            "type": "string",
+            "enum": ["immediate", "1-month", "3-months", "6-months", "planning-phase"]
+          },
+          "budget": {
+            "type": "string",
+            "enum": ["under-5k", "5k-15k", "15k-50k", "50k-100k", "100k+"],
+            "description": "Monthly budget in BRL"
+          },
+          "decisionMakers": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "description": "Number of people involved in decision"
+          },
+          "currentChallenges": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "few-qualified-leads",
+                "long-sales-cycle",
+                "manual-processes",
+                "poor-conversion-rates",
+                "limited-follow-up",
+                "lack-of-data",
+                "scaling-difficulties"
+              ]
+            },
+            "maxItems": 5
+          }
+        }
+      },
+      "ConsentInfo": {
+        "type": "object",
+        "required": ["lgpdConsent", "consentTimestamp"],
+        "properties": {
+          "lgpdConsent": {
+            "type": "boolean",
+            "enum": [true],
+            "description": "Required LGPD data processing consent"
+          },
+          "marketingConsent": {
+            "type": "boolean",
+            "description": "Optional marketing communication consent"
+          },
+          "dataRetention": {
+            "type": "boolean",
+            "description": "Data storage period agreement"
+          },
+          "thirdPartySharing": {
+            "type": "boolean",
+            "description": "Partner communication consent"
+          },
+          "consentTimestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When consent was given"
+          },
+          "consentVersion": {
+            "type": "string",
+            "description": "Privacy policy version"
+          }
+        }
+      },
+      "FormMetadata": {
+        "type": "object",
+        "properties": {
+          "utmSource": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "utmMedium": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "utmCampaign": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "referrer": {
+            "type": "string",
+            "format": "uri"
+          },
+          "userAgent": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "ipAddress": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "sessionDuration": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Time spent on site in seconds"
+          },
+          "pagesVisited": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20
+          },
+          "formStartTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ContactFormResponse": {
+        "type": "object",
+        "required": ["success", "message", "contactId", "estimatedResponseTime"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "enum": [true]
+          },
+          "message": {
+            "type": "string",
+            "description": "Success message in Portuguese"
+          },
+          "contactId": {
+            "type": "string",
+            "description": "Unique contact submission ID"
+          },
+          "estimatedResponseTime": {
+            "type": "string",
+            "description": "Expected response timeframe"
+          },
+          "nextSteps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "What happens next"
+          },
+          "whatsappScheduled": {
+            "type": "boolean",
+            "description": "Whether WhatsApp follow-up was scheduled"
+          },
+          "urgencyLevel": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "urgent"]
+          }
+        }
+      },
+      "PartialContactForm": {
+        "type": "object",
+        "properties": {
+          "personalInfo": {
+            "$ref": "#/components/schemas/PersonalInfo"
+          },
+          "businessInfo": {
+            "$ref": "#/components/schemas/BusinessInfo"
+          },
+          "interests": {
+            "$ref": "#/components/schemas/InterestInfo"
+          }
+        }
+      },
+      "ValidationResponse": {
+        "type": "object",
+        "required": ["valid", "completionPercentage"],
+        "properties": {
+          "valid": {
+            "type": "boolean"
+          },
+          "completionPercentage": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "missingFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggestions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Suggestions for improvement"
+          },
+          "leadScore": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Calculated lead quality score"
+          }
+        }
+      },
+      "ValidationError": {
+        "type": "object",
+        "required": ["success", "message", "errors"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "enum": [false]
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message in Portuguese"
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Field-specific validation errors"
+          },
+          "errorCode": {
+            "type": "string",
+            "enum": ["VALIDATION_FAILED", "MISSING_CONSENT", "INVALID_FORMAT", "RATE_LIMITED"]
+          }
+        }
+      },
+      "RateLimitError": {
+        "type": "object",
+        "required": ["success", "message", "retryAfter"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "enum": [false]
+          },
+          "message": {
+            "type": "string",
+            "description": "Rate limit message in Portuguese"
+          },
+          "retryAfter": {
+            "type": "integer",
+            "description": "Seconds until retry allowed"
+          },
+          "errorCode": {
+            "type": "string",
+            "enum": ["RATE_LIMITED"]
+          }
+        }
+      },
+      "ServerError": {
+        "type": "object",
+        "required": ["success", "message"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "enum": [false]
+          },
+          "message": {
+            "type": "string",
+            "description": "Server error message in Portuguese"
+          },
+          "errorCode": {
+            "type": "string",
+            "enum": ["INTERNAL_ERROR", "SERVICE_UNAVAILABLE", "DATABASE_ERROR"]
+          },
+          "requestId": {
+            "type": "string",
+            "description": "Request ID for tracking"
+          }
+        }
+      }
+    }
+  }
+}

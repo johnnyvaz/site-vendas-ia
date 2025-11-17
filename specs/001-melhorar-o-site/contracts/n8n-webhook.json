@@ -1,0 +1,767 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "n8n Webhook Integration API",
+    "description": "API for integrating Vendas.IA frontend with n8n workflows for email and WhatsApp automation",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Johnny Vaz",
+      "email": "contato@johnnyvaz.com.br",
+      "phone": "+55 16 99778 7674"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://n8n.vendas.ia.br/webhook",
+      "description": "n8n webhook server"
+    }
+  ],
+  "paths": {
+    "/contact-form": {
+      "post": {
+        "summary": "Submit contact form to n8n workflow",
+        "description": "Send contact form data to n8n for processing, email notification, and WhatsApp integration",
+        "operationId": "submitContactFormToN8n",
+        "tags": ["Contact Form"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactFormWebhookRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Form processed successfully by n8n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/N8nWebhookResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/N8nErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "n8n workflow error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/N8nErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "webhookAuth": []
+          }
+        ]
+      }
+    },
+    "/whatsapp-direct": {
+      "post": {
+        "summary": "Direct WhatsApp message trigger",
+        "description": "Trigger immediate WhatsApp message for urgent leads",
+        "operationId": "triggerWhatsAppMessage",
+        "tags": ["WhatsApp"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhatsAppTriggerRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "WhatsApp message triggered successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/N8nWebhookResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid message data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/N8nErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "webhookAuth": []
+          }
+        ]
+      }
+    },
+    "/link-tracking": {
+      "post": {
+        "summary": "Track WhatsApp link clicks",
+        "description": "Send click tracking data to n8n for analytics",
+        "operationId": "trackWhatsAppClick",
+        "tags": ["Analytics"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkTrackingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Click tracked successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/N8nWebhookResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "webhookAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ContactFormWebhookRequest": {
+        "type": "object",
+        "required": ["personalInfo", "consent", "metadata", "webhookSource"],
+        "properties": {
+          "webhookSource": {
+            "type": "string",
+            "enum": ["vendas-ia-website"],
+            "description": "Identifies the source of the webhook"
+          },
+          "submissionId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique form submission identifier"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Form submission timestamp"
+          },
+          "personalInfo": {
+            "$ref": "#/components/schemas/PersonalInfo"
+          },
+          "businessInfo": {
+            "$ref": "#/components/schemas/BusinessInfo"
+          },
+          "interests": {
+            "$ref": "#/components/schemas/InterestInfo"
+          },
+          "consent": {
+            "$ref": "#/components/schemas/ConsentInfo"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/FormMetadata"
+          },
+          "urgencyLevel": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "urgent"],
+            "description": "Calculated urgency for prioritization"
+          },
+          "leadScore": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Calculated lead quality score"
+          },
+          "preferredContact": {
+            "type": "string",
+            "enum": ["email", "whatsapp", "phone"],
+            "description": "User's preferred contact method"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Optional additional message from user"
+          }
+        }
+      },
+      "PersonalInfo": {
+        "type": "object",
+        "required": ["name", "email", "phone"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100,
+            "pattern": "^[a-zA-ZÀ-ÿ\\s]+$",
+            "description": "Full name (first and last name required)"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 255,
+            "description": "Business email address"
+          },
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+55\\s?\\(?[1-9][0-9]\\)?\\s?9?[0-9]{4}-?[0-9]{4}$",
+            "description": "Brazilian phone number with country code for WhatsApp"
+          },
+          "position": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Job title or position"
+          },
+          "whatsappOptIn": {
+            "type": "boolean",
+            "description": "Explicit consent for WhatsApp communication"
+          }
+        }
+      },
+      "BusinessInfo": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 200,
+            "description": "Company name"
+          },
+          "website": {
+            "type": "string",
+            "format": "uri",
+            "description": "Company website"
+          },
+          "industry": {
+            "type": "string",
+            "enum": [
+              "tecnologia",
+              "servicos-financeiros",
+              "saude",
+              "educacao",
+              "varejo",
+              "manufatura",
+              "consultoria",
+              "imobiliario",
+              "marketing",
+              "outros"
+            ]
+          },
+          "size": {
+            "type": "string",
+            "enum": ["1-10", "11-50", "51-200", "201-1000", "1000+"]
+          },
+          "revenue": {
+            "type": "string",
+            "enum": ["under-500k", "500k-2m", "2m-10m", "10m-50m", "50m+"],
+            "description": "Annual revenue in BRL"
+          },
+          "currentTools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 10,
+            "description": "Current sales/marketing tools"
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Primary business location in Brazil"
+          }
+        }
+      },
+      "InterestInfo": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["leads-rapido", "disparo-rapido", "sdr-virtual", "custom-solution"]
+            },
+            "minItems": 1,
+            "description": "Products of interest"
+          },
+          "primaryGoal": {
+            "type": "string",
+            "enum": [
+              "increase-leads",
+              "improve-conversion",
+              "automate-processes",
+              "reduce-costs",
+              "scale-sales-team"
+            ]
+          },
+          "timeline": {
+            "type": "string",
+            "enum": ["immediate", "1-month", "3-months", "6-months", "planning-phase"]
+          },
+          "budget": {
+            "type": "string",
+            "enum": ["under-5k", "5k-15k", "15k-50k", "50k-100k", "100k+"],
+            "description": "Monthly budget in BRL"
+          },
+          "decisionMakers": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "description": "Number of people involved in decision"
+          },
+          "currentChallenges": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "few-qualified-leads",
+                "long-sales-cycle",
+                "manual-processes",
+                "poor-conversion-rates",
+                "limited-follow-up",
+                "lack-of-data",
+                "scaling-difficulties"
+              ]
+            },
+            "maxItems": 5
+          }
+        }
+      },
+      "ConsentInfo": {
+        "type": "object",
+        "required": ["lgpdConsent", "consentTimestamp"],
+        "properties": {
+          "lgpdConsent": {
+            "type": "boolean",
+            "enum": [true],
+            "description": "Required LGPD data processing consent"
+          },
+          "marketingConsent": {
+            "type": "boolean",
+            "description": "Optional marketing communication consent"
+          },
+          "whatsappConsent": {
+            "type": "boolean",
+            "description": "Specific WhatsApp communication consent"
+          },
+          "dataRetention": {
+            "type": "boolean",
+            "description": "Data storage period agreement"
+          },
+          "consentTimestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When consent was given"
+          },
+          "consentVersion": {
+            "type": "string",
+            "description": "Privacy policy version"
+          },
+          "ipAddress": {
+            "type": "string",
+            "format": "ipv4",
+            "description": "User IP address for legal compliance"
+          }
+        }
+      },
+      "FormMetadata": {
+        "type": "object",
+        "properties": {
+          "utmSource": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "utmMedium": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "utmCampaign": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "utmContent": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "utmTerm": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "referrer": {
+            "type": "string",
+            "format": "uri"
+          },
+          "userAgent": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "sessionDuration": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Time spent on site in seconds"
+          },
+          "pagesVisited": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20
+          },
+          "formStartTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deviceInfo": {
+            "type": "object",
+            "properties": {
+              "isMobile": {
+                "type": "boolean"
+              },
+              "screenResolution": {
+                "type": "string"
+              },
+              "browserInfo": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "WhatsAppTriggerRequest": {
+        "type": "object",
+        "required": ["phoneNumber", "messageType", "leadData"],
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "pattern": "^55[0-9]{10,11}$",
+            "description": "Brazilian phone number for WhatsApp (without +)"
+          },
+          "messageType": {
+            "type": "string",
+            "enum": ["urgent_lead", "follow_up", "demo_request", "custom"],
+            "description": "Type of message to send"
+          },
+          "leadData": {
+            "type": "object",
+            "required": ["name", "company"],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "company": {
+                "type": "string"
+              },
+              "interest": {
+                "type": "string",
+                "enum": ["leads-rapido", "disparo-rapido", "sdr-virtual", "custom"]
+              },
+              "urgencyLevel": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "urgent"]
+              },
+              "submissionId": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          "customMessage": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Custom message content if messageType is 'custom'"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": ["contact-form", "direct-click", "callback-request"]
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      },
+      "LinkTrackingRequest": {
+        "type": "object",
+        "required": ["linkType", "clickData"],
+        "properties": {
+          "linkType": {
+            "type": "string",
+            "enum": ["whatsapp-cta", "whatsapp-direct", "email-cta"],
+            "description": "Type of link clicked"
+          },
+          "clickData": {
+            "type": "object",
+            "required": ["timestamp", "userAgent"],
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "userAgent": {
+                "type": "string"
+              },
+              "referrer": {
+                "type": "string",
+                "format": "uri"
+              },
+              "utmParameters": {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string"
+                  },
+                  "medium": {
+                    "type": "string"
+                  },
+                  "campaign": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "term": {
+                    "type": "string"
+                  }
+                }
+              },
+              "sessionId": {
+                "type": "string",
+                "description": "User session identifier"
+              },
+              "leadId": {
+                "type": "string",
+                "description": "Associated lead ID if available"
+              }
+            }
+          },
+          "deviceInfo": {
+            "type": "object",
+            "properties": {
+              "isMobile": {
+                "type": "boolean"
+              },
+              "screenResolution": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "N8nWebhookResponse": {
+        "type": "object",
+        "required": ["success", "workflowId", "executionId"],
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "workflowId": {
+            "type": "string",
+            "description": "n8n workflow identifier"
+          },
+          "executionId": {
+            "type": "string",
+            "description": "n8n execution identifier for tracking"
+          },
+          "message": {
+            "type": "string",
+            "description": "Response message in Portuguese"
+          },
+          "estimatedResponseTime": {
+            "type": "string",
+            "description": "Expected response timeframe"
+          },
+          "nextSteps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "What happens next"
+          },
+          "contactMethods": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "boolean",
+                "description": "Whether email will be sent"
+              },
+              "whatsapp": {
+                "type": "boolean",
+                "description": "Whether WhatsApp message will be sent"
+              },
+              "phone": {
+                "type": "boolean",
+                "description": "Whether phone call will be made"
+              }
+            }
+          },
+          "trackingInfo": {
+            "type": "object",
+            "properties": {
+              "submissionId": {
+                "type": "string"
+              },
+              "leadScore": {
+                "type": "integer"
+              },
+              "urgencyLevel": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "N8nErrorResponse": {
+        "type": "object",
+        "required": ["success", "error"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "enum": [false]
+          },
+          "error": {
+            "type": "object",
+            "required": ["message", "code"],
+            "properties": {
+              "message": {
+                "type": "string",
+                "description": "Error message in Portuguese"
+              },
+              "code": {
+                "type": "string",
+                "enum": [
+                  "VALIDATION_ERROR",
+                  "WORKFLOW_ERROR",
+                  "AUTHENTICATION_ERROR",
+                  "RATE_LIMIT_ERROR",
+                  "NETWORK_ERROR",
+                  "UNKNOWN_ERROR"
+                ]
+              },
+              "details": {
+                "type": "object",
+                "description": "Additional error details"
+              },
+              "retryable": {
+                "type": "boolean",
+                "description": "Whether the request can be retried"
+              },
+              "retryAfter": {
+                "type": "integer",
+                "description": "Seconds to wait before retry (if retryable)"
+              }
+            }
+          },
+          "executionId": {
+            "type": "string",
+            "description": "n8n execution ID for debugging"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "RateLimitResponse": {
+        "type": "object",
+        "required": ["success", "message", "retryAfter"],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "enum": [false]
+          },
+          "message": {
+            "type": "string",
+            "description": "Rate limit message in Portuguese"
+          },
+          "retryAfter": {
+            "type": "integer",
+            "description": "Seconds until retry allowed"
+          },
+          "limitType": {
+            "type": "string",
+            "enum": ["webhook_calls", "contact_submissions", "whatsapp_messages"],
+            "description": "Type of rate limit hit"
+          },
+          "currentUsage": {
+            "type": "integer",
+            "description": "Current usage count"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum allowed"
+          },
+          "resetTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the limit resets"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "webhookAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "n8n webhook authentication token"
+      },
+      "apiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-N8N-API-KEY",
+        "description": "n8n API key for authenticated requests"
+      }
+    }
+  },
+  "security": [
+    {
+      "webhookAuth": []
+    },
+    {
+      "apiKey": []
+    }
+  ]
+}
