@@ -156,7 +156,10 @@ const Hero = () => {
               </div>
 
               {/* Demo Link */}
-              <button className="flex items-center justify-center space-x-2 text-white/80 hover:text-white transition-colors group w-full">
+              <button
+                className="flex items-center justify-center space-x-2 text-white/80 hover:text-white transition-colors group w-full"
+                onClick={() => window.open('https://api.whatsapp.com/send?phone=5516997787674&text=Ol%C3%A1%20Johnny!%20Quero%20assistir%20uma%20demonstra%C3%A7%C3%A3o%20do%20Ecossistema%20IA!', '_blank')}
+              >
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="underline">Assistir demo de 3 minutos - Vendas reais</span>
               </button>

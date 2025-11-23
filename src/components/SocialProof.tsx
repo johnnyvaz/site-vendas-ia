@@ -142,7 +142,11 @@ const SocialProof = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button size="lg" className="btn-secondary">
+          <Button
+            size="lg"
+            className="btn-secondary"
+            onClick={() => window.open('https://api.whatsapp.com/send?phone=5516997787674&text=Ol%C3%A1%20Johnny!%20Quero%20um%20diagn%C3%B3stico%20gratuito%20para%20minha%20empresa!', '_blank')}
+          >
             Quero um diagnóstico gratuito
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>

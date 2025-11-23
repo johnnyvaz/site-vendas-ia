@@ -94,7 +94,11 @@ const HowItWorks = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button size="lg" className="btn-hero">
+          <Button
+            size="lg"
+            className="btn-hero"
+            onClick={() => window.open('https://api.whatsapp.com/send?phone=5516997787674&text=Ol%C3%A1%20Johnny!%20Quero%20ver%20o%20Ecossistema%20IA%20funcionando%20na%20pr%C3%A1tica!', '_blank')}
+          >
             Quero ver na prática
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>

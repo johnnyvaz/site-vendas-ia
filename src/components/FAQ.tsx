@@ -83,9 +83,9 @@ const FAQ = () => {
               >
                 Falar com Especialista
               </a>
-              <a 
-                href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá! Tenho dúvidas sobre o Vendas.IA" 
-                target="_blank" 
+              <a
+                href="https://api.whatsapp.com/send?phone=5516997787674&text=Ol%C3%A1%20Johnny!%20Tenho%20d%C3%BAvidas%20sobre%20o%20Vendas.IA"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
               >
