@@ -49,10 +49,10 @@ const Contact = () => {
                       <MessageSquare className="w-6 h-6 mr-3" />
                       <div>
                         <div className="font-bold">WhatsApp Direto</div>
-                        <div className="text-sm opacity-90">+55 16 9 9778-7674</div>
+                        <div className="text-sm opacity-90">+55 (16) 99778-7674</div>
                       </div>
                     </div>
-                    <Badge className="bg-white/20 text-white">🔥 MAIS RÁPIDO</Badge>
+                    <Badge className="bg-white/20 text-white">MAIS RÁPIDO</Badge>
                   </div>
                   <Button 
                     className="w-full bg-white text-green-600 hover:bg-gray-100 font-bold"
@@ -69,13 +69,13 @@ const Contact = () => {
                       <Mail className="w-5 h-5 mr-3 text-blue-600" />
                       <div>
                         <div className="font-semibold">Email</div>
-                        <div className="text-sm text-muted-foreground">johnny@vendas.ia.br</div>
+                        <div className="text-sm text-muted-foreground">contato@johnnyvaz.com.br</div>
                       </div>
                     </div>
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       size="sm"
-                      onClick={() => window.open('mailto:johnny@vendas.ia.br?subject=Consultoria%20Estratégica', '_blank')}
+                      onClick={() => window.open('mailto:contato@johnnyvaz.com.br?subject=Consultoria%20Estratégica', '_blank')}
                     >
                       Enviar
                     </Button>

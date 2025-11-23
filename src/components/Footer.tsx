@@ -37,17 +37,19 @@ interface FooterProps {
 const COMPANY_INFO = {
   name: 'Vendas.IA',
   legalName: 'Johnny Vaz - IA para Vendas B2B',
+  cnpj: '63.548.781/0001-73',
   founder: 'Johnny Vaz',
   address: {
-    street: 'Atendimento Nacional',
-    city: 'Base em São Paulo',
+    street: 'Avenida Paulista, 1106, Sala 01, Andar 16',
+    city: 'São Paulo',
     state: 'SP',
+    cep: '01310-914',
     country: 'Brasil',
   },
   contact: {
-    whatsapp: '+55 16 9 9778-7674',
-    phone: '+55 16 9 9778-7674',
-    email: 'johnny@vendas.ia.br',
+    whatsapp: '+55 (16) 99778-7674',
+    phone: '+55 (16) 99778-7674',
+    email: 'contato@johnnyvaz.com.br',
     linkedin: 'https://linkedin.com/in/johnnyvaz',
   },
 } as const;
@@ -207,7 +209,7 @@ export function Footer({
                     {COMPANY_INFO.address.street}
                   </p>
                   <p className="text-sm text-gray-400">
-                    {COMPANY_INFO.address.city} - {COMPANY_INFO.address.state}, {COMPANY_INFO.address.country}
+                    {COMPANY_INFO.address.city}/{COMPANY_INFO.address.state}, CEP: {COMPANY_INFO.address.cep}
                   </p>
                 </div>
               </div>
@@ -392,7 +394,7 @@ export function Footer({
                 © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Todos os direitos reservados.
               </p>
               <p className="text-xs text-gray-500">
-                {COMPANY_INFO.legalName} | Feito com ❤️ no Brasil 🇧🇷
+                CNPJ: {COMPANY_INFO.cnpj} | Feito com ❤️ no Brasil 🇧🇷
               </p>
             </div>
 

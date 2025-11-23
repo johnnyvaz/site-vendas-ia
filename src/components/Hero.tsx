@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, CheckCircle, Clock, Play, Users, Star, MessageSquare, Brain, Zap, TrendingUp, Shield } from 'lucide-react';
+import { CheckCircle, Play, Users, Star, MessageSquare, Brain, Zap, TrendingUp, Shield } from 'lucide-react';
 import heroImage from '@/assets/hero-vendas-ia.jpg';
 import WhatsAppCTA from '@/components/ui/WhatsAppCTA';
 import { useAnalytics } from '@/hooks/useAnalytics';
@@ -105,22 +105,38 @@ const Hero = () => {
             {/* Enhanced CTAs */}
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white font-bold px-10 py-5 h-auto text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold px-10 py-5 h-auto text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 animate-pulse"
+                  onClick={() => {
+                    handleCTAClick('crm_free_signup');
+                    window.open('https://crm.vendas.ia.br', '_blank');
+                  }}
+                >
+                  <Zap className="w-6 h-6 mr-3" />
+                  Começar CRM Grátis
+                </Button>
+                <Button
+                  size="lg"
+                  className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 px-8 py-5 h-auto text-lg"
                   onClick={() => window.open('https://api.whatsapp.com/send?phone=5516997787674&text=Ol%C3%A1%20Johnny,%20quero%20conhecer%20o%20Ecossistema%20IA%20para%20Vendas!', '_blank')}
                 >
                   <MessageSquare className="w-6 h-6 mr-3" />
-                  Falar com Johnny Agora
+                  Falar com Johnny
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-5 h-auto text-lg"
-                >
-                  <Play className="w-6 h-6 mr-3" />
-                  Ver Portfolio Completo
-                </Button>
+              </div>
+
+              {/* CRM Free Banner */}
+              <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-xl p-4 backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-3 text-center">
+                  <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center animate-bounce">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <span className="text-green-300 font-semibold">LeadCRM 100% Gratuito</span>
+                    <span className="text-white/80 ml-2">- Até 100 leads, pipeline visual e analytics</span>
+                  </div>
+                </div>
               </div>
 
               {/* Social Proof Strip */}

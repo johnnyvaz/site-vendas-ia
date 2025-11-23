@@ -41,7 +41,7 @@ const JOHNNY_INFO = {
   name: 'Johnny Vaz',
   title: 'Especialista em IA para Vendas',
   email: 'contato@johnnyvaz.com.br',
-  whatsapp: '+55 16 99778 7674',
+  whatsapp: '+55 (16) 99778-7674',
   responseTime: 'Resposta em até 2 horas',
   availability: 'Online agora'
 };

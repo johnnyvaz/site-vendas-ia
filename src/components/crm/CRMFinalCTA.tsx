@@ -170,7 +170,7 @@ const CRMFinalCTA = () => {
                   <Phone className="w-5 h-5 text-primary" />
                   <div className="text-left">
                     <p className="text-sm text-muted-foreground">WhatsApp</p>
-                    <p className="font-semibold">(16) 99778-7674</p>
+                    <p className="font-semibold">+55 (16) 99778-7674</p>
                   </div>
                 </div>
                 <div className="hidden md:block w-px h-12 bg-border"></div>
@@ -178,7 +178,7 @@ const CRMFinalCTA = () => {
                   <Mail className="w-5 h-5 text-primary" />
                   <div className="text-left">
                     <p className="text-sm text-muted-foreground">E-mail</p>
-                    <p className="font-semibold">contato@vendas.ia.br</p>
+                    <p className="font-semibold">contato@johnnyvaz.com.br</p>
                   </div>
                 </div>
               </div>

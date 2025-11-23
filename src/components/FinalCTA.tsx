@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap, Target } from 'lucide-react';
+import { ArrowRight, Zap, Target, Gift, CheckCircle } from 'lucide-react';
 
 const FinalCTA = () => {
   return (
@@ -42,34 +42,70 @@ const FinalCTA = () => {
             </div>
           </div>
 
+          {/* CRM Free Banner */}
+          <div className="bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-400/50 rounded-2xl p-6 mb-8 backdrop-blur-sm max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-green-400 rounded-full flex items-center justify-center">
+                <Gift className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold text-white">LeadCRM 100% Gratuito</h3>
+                <p className="text-green-200 text-sm">Comece agora sem cartão de crédito</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-white/90">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                <span>Até 100 leads</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                <span>Pipeline visual</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                <span>Analytics</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                <span>Multi-empresa</span>
+              </div>
+            </div>
+          </div>
+
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4">
-              Falar com um especialista
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button 
-              size="lg" 
-              className="btn-secondary text-lg px-8 py-4"
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-lg px-10 py-6 h-auto shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+              onClick={() => window.open('https://crm.vendas.ia.br', '_blank')}
             >
-              Quero começar agora
-              <Zap className="ml-2 w-5 h-5" />
+              <Gift className="mr-2 w-6 h-6" />
+              Começar CRM Grátis
+            </Button>
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 h-auto"
+              onClick={() => window.open('https://api.whatsapp.com/send?phone=5516997787674&text=Ol%C3%A1%20Johnny,%20quero%20conhecer%20o%20Ecossistema%20IA%20para%20Vendas!', '_blank')}
+            >
+              Falar com Johnny
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
 
           {/* Trust Elements */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-white/80 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-white/80 text-sm mt-8">
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-secondary rounded-full"></div>
-              <span>Sem compromisso inicial</span>
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span>Cadastro em 30 segundos</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span>Diagnóstico gratuito</span>
+              <span>Sem cartão de crédito</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>Dados 100% seguros</span>
+              <span>Grátis para sempre</span>
             </div>
           </div>
         </div>

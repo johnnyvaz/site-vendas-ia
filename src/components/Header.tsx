@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Menu, X, MessageSquare, Phone, Mail, Brain } from 'lucide-react';
+import { Menu, X, MessageSquare, Phone, Mail, Brain, Zap } from 'lucide-react';
 import WhatsAppCTA from '@/components/ui/WhatsAppCTA';
 
 const Header = () => {
@@ -41,7 +41,7 @@ const Header = () => {
           <div className="hidden sm:flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              <span>+55 16 99778-7674</span>
+              <span>+55 (16) 99778-7674</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
@@ -93,15 +93,27 @@ const Header = () => {
 
             {/* Contact Actions */}
             <div className="hidden md:flex items-center space-x-3">
-              <WhatsAppCTA 
-                variant="compact" 
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all"
+                onClick={() => {
+                  handleNavClick('crm-free');
+                  window.open('https://crm.vendas.ia.br', '_blank');
+                }}
+              >
+                <Zap className="w-4 h-4 mr-1" />
+                CRM Grátis
+              </Button>
+
+              <WhatsAppCTA
+                variant="compact"
                 size="sm"
                 customText="WhatsApp"
                 trackingSource="header-whatsapp"
                 showJohnnyInfo={false}
               />
-              
-              <Button 
+
+              <Button
                 variant="outline"
                 size="sm"
                 className="border-blue-600 text-blue-600 hover:bg-blue-50"
@@ -148,14 +160,25 @@ const Header = () => {
               
               {/* Mobile Contact Actions */}
               <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
-                <WhatsAppCTA 
-                  variant="compact" 
+                <Button
+                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-md"
+                  onClick={() => {
+                    handleNavClick('mobile-crm-free');
+                    window.open('https://crm.vendas.ia.br', '_blank');
+                  }}
+                >
+                  <Zap className="w-4 h-4 mr-2" />
+                  Começar CRM Grátis
+                </Button>
+
+                <WhatsAppCTA
+                  variant="compact"
                   customText="Falar no WhatsApp"
                   trackingSource="header-mobile-whatsapp"
                   className="w-full"
                 />
-                
-                <Button 
+
+                <Button
                   variant="outline"
                   className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
                   onClick={() => {
@@ -164,7 +187,7 @@ const Header = () => {
                   }}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  Ligar: +55 16 99778-7674
+                  Ligar: +55 (16) 99778-7674
                 </Button>
               </div>
             </nav>

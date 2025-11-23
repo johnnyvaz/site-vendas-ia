@@ -113,15 +113,15 @@ const CRMHero = () => {
                   <Sparkles className="w-6 h-6 mr-3" />
                   Testar 7 Dias Grátis
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-5 h-auto text-lg"
-                  onClick={() => handleCTAClick('demo_video')}
-                >
-                  <BarChart3 className="w-6 h-6 mr-3" />
-                  Ver Demonstração
-                </Button>
+                  {/* <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-white/30 text-white hover:bg-white/10 px-8 py-5 h-auto text-lg"
+                    onClick={() => handleCTAClick('demo_video')}
+                  >
+                    <BarChart3 className="w-6 h-6 mr-3" />
+                    Ver Demonstração
+                  </Button> */}
               </div>
 
               {/* Social Proof Strip */}

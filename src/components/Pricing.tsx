@@ -1,9 +1,28 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Check, Star, ArrowRight, Mail, Users, Zap } from 'lucide-react';
+import { Check, Star, ArrowRight, Mail, Users, Zap, Gift } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
+    {
+      name: 'LeadCRM Free',
+      price: 0,
+      description: 'CRM completo 100% gratuito para começar agora',
+      icon: Gift,
+      features: [
+        'Até 100 leads',
+        'Pipeline de vendas visual',
+        'Analytics em tempo real',
+        'Multi-empresa',
+        'Cadastro rápido',
+        'Sem cartão de crédito'
+      ],
+      buttonText: 'Começar Grátis Agora',
+      buttonClass: 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white',
+      popular: false,
+      free: true,
+      externalLink: 'https://crm.vendas.ia.br'
+    },
     {
       name: 'Starter',
       price: 297,
@@ -74,9 +93,9 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
-            <div key={index} className={`pricing-card ${plan.popular ? 'featured' : ''}`}>
+            <div key={index} className={`pricing-card ${plan.popular ? 'featured' : ''} ${plan.free ? 'border-2 border-green-500 relative overflow-hidden' : ''}`}>
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-accent text-accent-foreground">
@@ -86,32 +105,50 @@ const Pricing = () => {
                 </div>
               )}
 
-              <div className="text-center mb-8">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl ${plan.popular ? 'bg-accent/10' : 'bg-primary/10'} flex items-center justify-center`}>
-                  <plan.icon className={`w-8 h-8 ${plan.popular ? 'text-accent' : 'text-primary'}`} />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-muted-foreground mb-4">{plan.description}</p>
-                
-                <div className="space-y-2">
-                  <div className="flex items-baseline justify-center space-x-2">
-                    <span className="text-4xl font-bold">R$ {plan.price.toLocaleString()}</span>
-                    <span className="text-muted-foreground">/mês</span>
+              {plan.free && (
+                <div className="absolute top-0 right-0">
+                  <div className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                    GRÁTIS
                   </div>
+                </div>
+              )}
+
+              <div className="text-center mb-8">
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl ${plan.free ? 'bg-green-500/10' : plan.popular ? 'bg-accent/10' : 'bg-primary/10'} flex items-center justify-center`}>
+                  <plan.icon className={`w-8 h-8 ${plan.free ? 'text-green-500' : plan.popular ? 'text-accent' : 'text-primary'}`} />
+                </div>
+
+                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <p className="text-muted-foreground mb-4 text-sm">{plan.description}</p>
+
+                <div className="space-y-2">
+                  {plan.free ? (
+                    <div className="flex items-baseline justify-center space-x-2">
+                      <span className="text-4xl font-bold text-green-500">Grátis</span>
+                      <span className="text-muted-foreground text-sm">para sempre</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-baseline justify-center space-x-2">
+                      <span className="text-4xl font-bold">R$ {plan.price.toLocaleString()}</span>
+                      <span className="text-muted-foreground">/mês</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-start space-x-3">
-                    <Check className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                    <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${plan.free ? 'text-green-500' : 'text-secondary'}`} />
                     <span className="text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <Button className={`w-full ${plan.buttonClass}`}>
+              <Button
+                className={`w-full ${plan.buttonClass}`}
+                onClick={() => plan.externalLink && window.open(plan.externalLink, '_blank')}
+              >
                 {plan.buttonText}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
