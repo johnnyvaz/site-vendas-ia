@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Menu, X, MessageSquare, Phone, Mail, Brain, Zap } from 'lucide-react';
+import { Menu, X, Brain, Zap } from 'lucide-react';
 import WhatsAppCTA from '@/components/ui/WhatsAppCTA';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showContactInfo, setShowContactInfo] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +16,9 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { href: '#inicio', label: 'Início' },
-    { href: '#produtos', label: 'Produtos', badge: 'Novo' },
-    { href: '#solucoes', label: 'Soluções' },
-    { href: '#como-funciona', label: 'Como Funciona' },
+    { href: '#inicio', label: 'Inicio' },
+    { href: '#recursos', label: 'Recursos' },
     { href: '#planos', label: 'Planos' },
-    { href: '#cases', label: 'Cases' },
     { href: '#faq', label: 'FAQ' },
     { href: '#contato', label: 'Contato' },
   ];
@@ -37,22 +32,8 @@ const Header = () => {
     <>
       {/* Top Contact Bar */}
       <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-2 px-4">
-        <div className="container mx-auto flex items-center justify-between text-sm">
-          <div className="hidden sm:flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>+55 (16) 99778-7674</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>contato@johnnyvaz.com.br</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
-            <span className="text-xs">Johnny Vaz - Especialista IA Online</span>
-          </div>
+        <div className="container mx-auto flex items-center justify-center text-sm">
+          <span>Duvidas? Johnny responde em 2h: (16) 99778-7674</span>
         </div>
       </div>
 
@@ -68,7 +49,7 @@ const Header = () => {
                 <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                   Vendas.IA
                 </span>
-                <div className="text-xs text-gray-500">Automação Inteligente</div>
+                <div className="text-xs text-gray-500">by Johnny Vaz</div>
               </div>
             </a>
 
@@ -78,15 +59,10 @@ const Header = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="relative text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium flex items-center gap-1"
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                   onClick={() => handleNavClick(item.label)}
                 >
                   {item.label}
-                  {item.badge && (
-                    <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs ml-1">
-                      {item.badge}
-                    </Badge>
-                  )}
                 </a>
               ))}
             </nav>
@@ -102,7 +78,7 @@ const Header = () => {
                 }}
               >
                 <Zap className="w-4 h-4 mr-1" />
-                CRM Grátis
+                CRM Gratis
               </Button>
 
               <WhatsAppCTA
@@ -112,19 +88,6 @@ const Header = () => {
                 trackingSource="header-whatsapp"
                 showJohnnyInfo={false}
               />
-
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                onClick={() => {
-                  handleNavClick('contact-phone');
-                  window.open('tel:+5516997787674', '_self');
-                }}
-              >
-                <Phone className="w-4 h-4 mr-1" />
-                Ligar
-              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -140,24 +103,19 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50 max-h-[80vh] overflow-y-auto">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
             <nav className="flex flex-col space-y-2 p-4 w-full">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 font-medium py-3 px-2 rounded-lg flex items-center justify-between"
+                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 font-medium py-3 px-2 rounded-lg"
                   onClick={() => handleNavClick(item.label)}
                 >
-                  <span>{item.label}</span>
-                  {item.badge && (
-                    <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
-                      {item.badge}
-                    </Badge>
-                  )}
+                  {item.label}
                 </a>
               ))}
-              
+
               {/* Mobile Contact Actions */}
               <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
                 <Button
@@ -168,7 +126,7 @@ const Header = () => {
                   }}
                 >
                   <Zap className="w-4 h-4 mr-2" />
-                  Começar CRM Grátis
+                  Comecar CRM Gratis
                 </Button>
 
                 <WhatsAppCTA
@@ -177,18 +135,6 @@ const Header = () => {
                   trackingSource="header-mobile-whatsapp"
                   className="w-full"
                 />
-
-                <Button
-                  variant="outline"
-                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
-                  onClick={() => {
-                    handleNavClick('mobile-phone');
-                    window.open('tel:+5516997787674', '_self');
-                  }}
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Ligar: +55 (16) 99778-7674
-                </Button>
               </div>
             </nav>
           </div>

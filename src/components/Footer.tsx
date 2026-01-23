@@ -56,28 +56,18 @@ const COMPANY_INFO = {
 
 const FOOTER_LINKS = {
   solutions: [
-    { name: '🚀 Disparo Rápido WhatsApp', href: 'https://disparorapido.com.br/' },
-    // { name: '🤖 Vendedor IA 24/7', href: '#solucoes' },
-    // { name: '🎨 Landing Pages IA', href: '#solucoes' },
-    // { name: '📊 Analytics Inteligente', href: '#solucoes' },
+    { name: 'Disparo Rapido WhatsApp', href: 'https://disparorapido.com.br/' },
   ],
   company: [
     { name: 'Sobre Johnny Vaz', href: 'https://johnnyvaz.com.br/' },
     { name: 'Portfolio', href: 'https://johnnyvaz.com.br/projects' },
-    // { name: 'Cases de Sucesso', href: '#depoimentos' },
-    // { name: 'Contato Direto', href: '#contato' },
   ],
   resources: [
-    { name: 'Blog IA para Vendas', href: '/blog' },
-    { name: 'Guias Gratuitos', href: '/recursos' },
-    { name: 'Webinars', href: '/eventos' },
     { name: 'FAQ', href: '#faq' },
   ],
   legal: [
-    { name: 'Política de Privacidade', href: '/politica-privacidade' },
+    { name: 'Politica de Privacidade', href: '/politica-privacidade' },
     { name: 'Termos de Uso', href: '/termos-uso' },
-    { name: 'Compliance LGPD', href: '/lgpd' },
-    { name: 'Cookies', href: '/cookies' },
   ],
 } as const;
 
@@ -195,8 +185,8 @@ export function Footer({
                 {COMPANY_INFO.name}
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Especialistas em inteligência artificial para vendas no Brasil.
-                Transformamos processos comerciais com tecnologia de ponta.
+                CRM de prospeccao automatizada para PMEs brasileiras.
+                Criado por Johnny Vaz, especialista em IA para vendas.
               </p>
             </div>
 
@@ -253,7 +243,7 @@ export function Footer({
 
           {/* Navigation Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">🚀 Soluções IA</h4>
+            <h4 className="text-lg font-semibold mb-4">Solucoes IA</h4>
             <ul className="space-y-2">
               {FOOTER_LINKS.solutions.map((link) => (
                 <li key={link.name}>
@@ -394,7 +384,7 @@ export function Footer({
                 © {new Date().getFullYear()} {COMPANY_INFO.legalName}. Todos os direitos reservados.
               </p>
               <p className="text-xs text-gray-500">
-                CNPJ: {COMPANY_INFO.cnpj} | Feito com ❤️ no Brasil 🇧🇷
+                CNPJ: {COMPANY_INFO.cnpj} | Feito no Brasil
               </p>
             </div>
 
