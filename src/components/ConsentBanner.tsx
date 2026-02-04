@@ -1,7 +1,10 @@
-// LGPD Consent Banner Component for Vendas.IA
-// Handles cookie consent and data protection compliance for Brazilian market
+/**
+ * LGPD Consent Banner Component for Vendas.IA
+ * Handles cookie consent with REAL blocking of scripts/cookies
+ * Integrates with useConsentManager for actual enforcement
+ */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -28,18 +31,10 @@ import {
   Users,
   BarChart3,
   MessageSquare,
+  Download,
+  Trash2,
 } from 'lucide-react';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
-import { useAnalytics } from '@/hooks/useAnalytics';
-
-interface ConsentPreferences {
-  necessary: boolean; // Always true, cannot be disabled
-  analytics: boolean;
-  marketing: boolean;
-  personalization: boolean;
-  timestamp: number;
-  version: string;
-}
+import { useConsentManager, ConsentPreferences } from '@/hooks/useConsentManager';
 
 interface ConsentBannerProps {
   position?: 'bottom' | 'top';
@@ -50,45 +45,32 @@ interface ConsentBannerProps {
   className?: string;
 }
 
-const CONSENT_VERSION = '1.0.0';
-const CONSENT_KEY = 'vendas-ia-lgpd-consent';
-
-// Default consent preferences
-const DEFAULT_PREFERENCES: ConsentPreferences = {
-  necessary: true,
-  analytics: false,
-  marketing: false,
-  personalization: false,
-  timestamp: Date.now(),
-  version: CONSENT_VERSION,
-};
-
 // Cookie categories with descriptions
 const COOKIE_CATEGORIES = {
   necessary: {
     title: 'Cookies Necessários',
-    description: 'Essenciais para o funcionamento do site',
+    description: 'Essenciais para o funcionamento do site. Não podem ser desabilitados.',
     icon: Lock,
-    examples: ['Autenticação', 'Preferências de idioma', 'Carrinho de compras'],
+    examples: ['Autenticação', 'Preferências de sessão', 'Segurança'],
     required: true,
   },
   analytics: {
     title: 'Cookies Analíticos',
-    description: 'Nos ajudam a entender como você usa o site',
+    description: 'Nos ajudam a entender como você usa o site para melhorar a experiência.',
     icon: BarChart3,
     examples: ['Google Analytics', 'Métricas de performance', 'Heatmaps'],
     required: false,
   },
   marketing: {
     title: 'Cookies de Marketing',
-    description: 'Usados para personalizar anúncios e conteúdo',
+    description: 'Usados para personalizar anúncios e medir campanhas publicitárias.',
     icon: MessageSquare,
-    examples: ['Pixels de conversão', 'Retargeting', 'Campanhas publicitárias'],
+    examples: ['Facebook Pixel', 'Google Ads', 'Retargeting'],
     required: false,
   },
   personalization: {
     title: 'Cookies de Personalização',
-    description: 'Lembram suas preferências para melhorar sua experiência',
+    description: 'Lembram suas preferências para uma experiência personalizada.',
     icon: Users,
     examples: ['Conteúdo personalizado', 'Recomendações', 'Interface adaptada'],
     required: false,
@@ -103,109 +85,69 @@ export function ConsentBanner({
   privacyPolicyUrl = '/politica-privacidade',
   className = '',
 }: ConsentBannerProps) {
-  const [preferences, setPreferences] = useLocalStorage<ConsentPreferences | null>(CONSENT_KEY, null);
-  const [showBanner, setShowBanner] = useState(false);
+  const {
+    preferences,
+    showBanner,
+    isInitialized,
+    acceptAll,
+    acceptNecessaryOnly,
+    savePreferences,
+    exportConsentData,
+    revokeAll,
+  } = useConsentManager({
+    onConsentChange,
+  });
+
   const [showSettings, setShowSettings] = useState(false);
-  const [tempPreferences, setTempPreferences] = useState<ConsentPreferences>(DEFAULT_PREFERENCES);
+  const [tempPreferences, setTempPreferences] = useState<ConsentPreferences>({
+    necessary: true,
+    analytics: false,
+    marketing: false,
+    personalization: false,
+    timestamp: Date.now(),
+    version: '1.0.0',
+  });
 
-  // const { trackEvent, config: analyticsConfig } = useAnalytics();
-
-  // Check if consent is needed
+  // Sincronizar preferências temporárias com as salvas
   useEffect(() => {
-    const needsConsent = !preferences ||
-                        preferences.version !== CONSENT_VERSION ||
-                        Date.now() - preferences.timestamp > (365 * 24 * 60 * 60 * 1000); // 1 year
-
-    setShowBanner(needsConsent);
-
     if (preferences) {
       setTempPreferences(preferences);
     }
   }, [preferences]);
 
-  // Update analytics config based on consent
-  useEffect(() => {
-    if (preferences) {
-      // Update analytics configuration
-      if (analyticsConfig) {
-        analyticsConfig.trackingConsent = preferences.analytics;
-        analyticsConfig.enableTracking = preferences.analytics;
-      }
-
-      onConsentChange?.(preferences);
-    }
-  }, [preferences, analyticsConfig, onConsentChange]);
-
-  const savePreferences = (newPreferences: ConsentPreferences) => {
-    const updatedPreferences = {
-      ...newPreferences,
-      timestamp: Date.now(),
-      version: CONSENT_VERSION,
-      necessary: true, // Always required
-    };
-
-    setPreferences(updatedPreferences);
-    setShowBanner(false);
-    setShowSettings(false);
-
-    // Track consent decision
-    trackEvent('consent_updated', {
-      analytics: updatedPreferences.analytics,
-      marketing: updatedPreferences.marketing,
-      personalization: updatedPreferences.personalization,
-      consentVersion: CONSENT_VERSION,
-    });
+  const handleAcceptAll = () => {
+    acceptAll();
+    console.log('[LGPD] Usuário aceitou todos os cookies');
   };
 
-  const acceptAll = () => {
-    const allAccepted: ConsentPreferences = {
-      necessary: true,
-      analytics: true,
-      marketing: true,
-      personalization: true,
-      timestamp: Date.now(),
-      version: CONSENT_VERSION,
-    };
-
-    savePreferences(allAccepted);
-
-    trackEvent('consent_all_accepted', {
-      source: 'banner',
-      consentVersion: CONSENT_VERSION,
-    });
+  const handleAcceptNecessaryOnly = () => {
+    acceptNecessaryOnly();
+    console.log('[LGPD] Usuário aceitou apenas cookies necessários');
   };
 
-  const acceptNecessaryOnly = () => {
-    savePreferences(DEFAULT_PREFERENCES);
-
-    trackEvent('consent_necessary_only', {
-      source: 'banner',
-      consentVersion: CONSENT_VERSION,
-    });
-  };
-
-  const openSettings = () => {
+  const handleOpenSettings = () => {
     setShowSettings(true);
-    setTempPreferences(preferences || DEFAULT_PREFERENCES);
-
-    trackEvent('consent_settings_opened', {
-      source: 'banner',
+    setTempPreferences(preferences || {
+      necessary: true,
+      analytics: false,
+      marketing: false,
+      personalization: false,
+      timestamp: Date.now(),
+      version: '1.0.0',
     });
   };
 
-  const saveCustomPreferences = () => {
+  const handleSaveCustomPreferences = () => {
     savePreferences(tempPreferences);
-
-    trackEvent('consent_custom_saved', {
-      analytics: tempPreferences.analytics,
-      marketing: tempPreferences.marketing,
-      personalization: tempPreferences.personalization,
-      source: 'settings',
-    });
+    setShowSettings(false);
+    console.log('[LGPD] Usuário salvou preferências customizadas:', tempPreferences);
   };
 
-  const updatePreference = (category: keyof Omit<ConsentPreferences, 'timestamp' | 'version'>, value: boolean) => {
-    if (category === 'necessary') return; // Cannot be disabled
+  const updateTempPreference = (
+    category: keyof Omit<ConsentPreferences, 'timestamp' | 'version'>,
+    value: boolean
+  ) => {
+    if (category === 'necessary') return; // Não pode ser desabilitado
 
     setTempPreferences(prev => ({
       ...prev,
@@ -213,7 +155,8 @@ export function ConsentBanner({
     }));
   };
 
-  if (!showBanner) {
+  // Não renderizar até inicializar ou se não precisa mostrar
+  if (!isInitialized || !showBanner) {
     return null;
   }
 
@@ -238,22 +181,23 @@ export function ConsentBanner({
               </h3>
               <Badge variant="secondary" className="text-xs">
                 <Shield className="h-3 w-3 mr-1" />
-                Conformidade
+                Bloqueio Real
               </Badge>
             </div>
 
             <p className="text-gray-700 mb-4 leading-relaxed">
               {compactMode ? (
                 <>
-                  Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa{' '}
+                  Usamos cookies para melhorar sua experiência. Scripts de terceiros são{' '}
+                  <strong>realmente bloqueados</strong> até você consentir.{' '}
                   <a href={privacyPolicyUrl} target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">
                     Política de Privacidade
                   </a>.
                 </>
               ) : (
                 <>
-                  Respeitamos sua privacidade e estamos em conformidade com a Lei Geral de Proteção de Dados (LGPD).
-                  Usamos cookies e tecnologias similares para melhorar sua experiência, personalizar conteúdo e analisar nosso tráfego.
+                  Respeitamos sua privacidade conforme a Lei Geral de Proteção de Dados (LGPD).
+                  Scripts de analytics e marketing são <strong>realmente bloqueados</strong> até você dar consentimento explícito.
                   Você pode escolher quais tipos de cookies aceitar.{' '}
                   <a href={privacyPolicyUrl} target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline font-medium">
                     Saiba mais
@@ -264,7 +208,7 @@ export function ConsentBanner({
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
-                onClick={acceptAll}
+                onClick={handleAcceptAll}
                 className="bg-orange-600 hover:bg-orange-700 text-white"
                 size={compactMode ? 'sm' : 'default'}
               >
@@ -274,7 +218,7 @@ export function ConsentBanner({
 
               <Button
                 variant="outline"
-                onClick={acceptNecessaryOnly}
+                onClick={handleAcceptNecessaryOnly}
                 size={compactMode ? 'sm' : 'default'}
               >
                 <X className="h-4 w-4 mr-2" />
@@ -286,7 +230,7 @@ export function ConsentBanner({
                   <DialogTrigger asChild>
                     <Button
                       variant="ghost"
-                      onClick={openSettings}
+                      onClick={handleOpenSettings}
                       size={compactMode ? 'sm' : 'default'}
                     >
                       <Settings className="h-4 w-4 mr-2" />
@@ -295,9 +239,12 @@ export function ConsentBanner({
                   </DialogTrigger>
                   <ConsentSettingsDialog
                     preferences={tempPreferences}
-                    onPreferenceChange={updatePreference}
-                    onSave={saveCustomPreferences}
+                    onPreferenceChange={updateTempPreference}
+                    onSave={handleSaveCustomPreferences}
+                    onExport={exportConsentData}
+                    onRevoke={revokeAll}
                     privacyPolicyUrl={privacyPolicyUrl}
+                    hasExistingConsent={preferences !== null}
                   />
                 </Dialog>
               )}
@@ -321,16 +268,25 @@ export function ConsentBanner({
 // Settings dialog component
 interface ConsentSettingsDialogProps {
   preferences: ConsentPreferences;
-  onPreferenceChange: (category: keyof Omit<ConsentPreferences, 'timestamp' | 'version'>, value: boolean) => void;
+  onPreferenceChange: (
+    category: keyof Omit<ConsentPreferences, 'timestamp' | 'version'>,
+    value: boolean
+  ) => void;
   onSave: () => void;
+  onExport: () => void;
+  onRevoke: () => void;
   privacyPolicyUrl: string;
+  hasExistingConsent: boolean;
 }
 
 function ConsentSettingsDialog({
   preferences,
   onPreferenceChange,
   onSave,
+  onExport,
+  onRevoke,
   privacyPolicyUrl,
+  hasExistingConsent,
 }: ConsentSettingsDialogProps) {
   return (
     <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
@@ -340,8 +296,7 @@ function ConsentSettingsDialog({
           <span>Configurações de Privacidade</span>
         </DialogTitle>
         <DialogDescription>
-          Escolha quais tipos de cookies e dados você permite que coletemos.
-          Isso nos ajuda a fornecer uma melhor experiência personalizada.
+          Escolha quais tipos de cookies aceitar. Scripts são <strong>realmente bloqueados</strong> até você consentir.
         </DialogDescription>
       </DialogHeader>
 
@@ -358,7 +313,10 @@ function ConsentSettingsDialog({
                     id={key}
                     checked={isChecked}
                     onCheckedChange={(checked) =>
-                      onPreferenceChange(key as keyof Omit<ConsentPreferences, 'timestamp' | 'version'>, !!checked)
+                      onPreferenceChange(
+                        key as keyof Omit<ConsentPreferences, 'timestamp' | 'version'>,
+                        !!checked
+                      )
                     }
                     disabled={category.required}
                   />
@@ -392,6 +350,23 @@ function ConsentSettingsDialog({
           );
         })}
 
+        {/* Status do bloqueio */}
+        <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+          <div className="flex items-start space-x-3">
+            <Shield className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <div className="text-sm">
+              <h4 className="font-medium text-green-900 mb-1">
+                Bloqueio Real Ativo
+              </h4>
+              <p className="text-green-800">
+                Scripts de terceiros (Google Analytics, Facebook Pixel, etc.) são <strong>realmente bloqueados</strong> até
+                você dar consentimento. Cookies existentes são removidos quando você revoga permissões.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Direitos LGPD */}
         <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
           <div className="flex items-start space-x-3">
             <Info className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -401,7 +376,6 @@ function ConsentSettingsDialog({
               </h4>
               <p className="text-blue-800 mb-2">
                 Você tem o direito de acessar, corrigir, excluir ou transferir seus dados pessoais.
-                Entre em contato conosco para exercer esses direitos.
               </p>
               <p className="text-blue-700 text-xs">
                 <strong>Contato:</strong> contato@johnnyvaz.com.br | +55 16 99778-7674
@@ -409,18 +383,21 @@ function ConsentSettingsDialog({
             </div>
           </div>
         </div>
-
-        <div className="text-xs text-gray-500 space-y-1">
-          <p>
-            <strong>Última atualização:</strong> {new Date().toLocaleDateString('pt-BR')}
-          </p>
-          <p>
-            <strong>Versão da política:</strong> {CONSENT_VERSION}
-          </p>
-        </div>
       </div>
 
       <DialogFooter className="flex-col sm:flex-row gap-2">
+        {hasExistingConsent && (
+          <>
+            <Button variant="outline" size="sm" onClick={onExport}>
+              <Download className="h-4 w-4 mr-2" />
+              Exportar Dados
+            </Button>
+            <Button variant="outline" size="sm" onClick={onRevoke} className="text-red-600 hover:text-red-700">
+              <Trash2 className="h-4 w-4 mr-2" />
+              Revogar Tudo
+            </Button>
+          </>
+        )}
         <Button variant="outline" asChild>
           <a href={privacyPolicyUrl} target="_blank" rel="noopener noreferrer">
             <FileText className="h-4 w-4 mr-2" />
@@ -444,9 +421,22 @@ export function ConsentStatus({
   onOpenSettings?: () => void;
   className?: string;
 }) {
-  const [preferences] = useLocalStorage<ConsentPreferences | null>(CONSENT_KEY, null);
+  const { preferences, revokeAll, exportConsentData } = useConsentManager();
   const [showSettings, setShowSettings] = useState(false);
-  const [tempPreferences, setTempPreferences] = useState<ConsentPreferences>(DEFAULT_PREFERENCES);
+  const [tempPreferences, setTempPreferences] = useState<ConsentPreferences>({
+    necessary: true,
+    analytics: false,
+    marketing: false,
+    personalization: false,
+    timestamp: Date.now(),
+    version: '1.0.0',
+  });
+
+  useEffect(() => {
+    if (preferences) {
+      setTempPreferences(preferences);
+    }
+  }, [preferences]);
 
   if (!preferences) return null;
 
@@ -456,14 +446,12 @@ export function ConsentStatus({
     onOpenSettings?.();
   };
 
-  const updatePreference = (category: keyof Omit<ConsentPreferences, 'timestamp' | 'version'>, value: boolean) => {
+  const updatePreference = (
+    category: keyof Omit<ConsentPreferences, 'timestamp' | 'version'>,
+    value: boolean
+  ) => {
     if (category === 'necessary') return;
     setTempPreferences(prev => ({ ...prev, [category]: value }));
-  };
-
-  const savePreferences = () => {
-    // This would update the global preferences
-    setShowSettings(false);
   };
 
   const activePreferences = Object.entries(preferences)
@@ -487,8 +475,11 @@ export function ConsentStatus({
         <ConsentSettingsDialog
           preferences={tempPreferences}
           onPreferenceChange={updatePreference}
-          onSave={savePreferences}
+          onSave={() => setShowSettings(false)}
+          onExport={exportConsentData}
+          onRevoke={revokeAll}
           privacyPolicyUrl="/politica-privacidade"
+          hasExistingConsent={true}
         />
       </Dialog>
     </div>

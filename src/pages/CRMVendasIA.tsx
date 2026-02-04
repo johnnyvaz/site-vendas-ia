@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { ConsentBanner } from '@/components/ConsentBanner';
+import ConditionalScripts from '@/components/ConditionalScripts';
 
 // Lazy loaded CRM-specific components
 const CRMHero = lazy(() => import('@/components/crm/CRMHero'));
@@ -41,6 +43,18 @@ const CRMVendasIA = () => {
         </Suspense>
       </main>
       <Footer />
+
+      {/* LGPD Consent Banner */}
+      <ConsentBanner />
+
+      {/* Scripts condicionais - só carregam com consentimento */}
+      <ConditionalScripts
+        // Descomente e configure seus IDs quando necessário:
+        // googleAnalyticsId="G-XXXXXXXXXX"
+        // facebookPixelId="XXXXXXXXXXXXXXX"
+        // googleTagManagerId="GTM-XXXXXXX"
+        // hotjarId="XXXXXXX"
+      />
     </div>
   );
 };
