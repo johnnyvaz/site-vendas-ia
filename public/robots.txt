@@ -12,3 +12,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /crm
+Disallow: /produtos
+
+Sitemap: https://vendas.ia.br/sitemap.xml

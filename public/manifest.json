@@ -1,15 +1,15 @@
 {
-  "name": "Vendas.IA - Automação Inteligente para Vendas",
-  "short_name": "Vendas.IA",
-  "description": "Transforme suas vendas com IA. Disparo Rápido WhatsApp, automação de marketing e soluções personalizadas para empresas brasileiras.",
+  "name": "vendas.ia.br — domínio premium à venda",
+  "short_name": "vendas.ia.br",
+  "description": "O domínio vendas.ia.br está à venda. Exact match de vendas + inteligência artificial na extensão brasileira .ia.br.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#27305d",
-  "theme_color": "#27305d",
+  "background_color": "#0b0b0c",
+  "theme_color": "#0b0b0c",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "pt-BR",
-  "categories": ["business", "productivity", "finance"],
+  "categories": ["business"],
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
@@ -60,69 +60,6 @@
       "purpose": "maskable any"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Disparo Rápido",
-      "short_name": "Disparo",
-      "description": "Automação de WhatsApp",
-      "url": "/#disparo-rapido",
-      "icons": [
-        {
-          "src": "/icons/shortcut-disparo.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Contato",
-      "short_name": "Contato",
-      "description": "Falar com especialista",
-      "url": "/#contato",
-      "icons": [
-        {
-          "src": "/icons/shortcut-contact.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "WhatsApp",
-      "short_name": "WhatsApp",
-      "description": "Contato direto",
-      "url": "https://api.whatsapp.com/send?phone=5516997787674&text=Olá!%20Vim%20do%20site%20da%20Vendas.IA",
-      "icons": [
-        {
-          "src": "/icons/shortcut-whatsapp.png",
-          "sizes": "96x96"
-        }
-      ]
-    }
-  ],
   "related_applications": [],
-  "prefer_related_applications": false,
-  "edge_side_panel": {
-    "preferred_width": 400
-  },
-  "screenshots": [
-    {
-      "src": "/screenshots/desktop-1.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Homepage Vendas.IA"
-    },
-    {
-      "src": "/screenshots/mobile-1.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Mobile Vendas.IA"
-    }
-  ],
-  "protocol_handlers": [
-    {
-      "protocol": "web+vendas",
-      "url": "/?utm_source=pwa&action=%s"
-    }
-  ]
+  "prefer_related_applications": false
 }

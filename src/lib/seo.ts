@@ -55,23 +55,23 @@ export interface ProductSEO {
 
 class SEOManager {
   private defaultMetadata: SEOMetadata = {
-    title: 'Vendas.IA - Automação Inteligente para Vendas no Brasil',
-    description: 'Transforme suas vendas com IA. Disparo Rápido WhatsApp, automação de marketing e soluções personalizadas para empresas brasileiras. Teste grátis!',
+    title: 'vendas.ia.br — domínio premium à venda',
+    description: 'O domínio vendas.ia.br está à venda. Exact match de vendas + inteligência artificial na extensão brasileira .ia.br. Propostas por e-mail: contato@johnnyvaz.com.br.',
     keywords: [
-      'vendas com ia',
-      'automação whatsapp',
-      'disparo rápido',
-      'marketing digital brasil',
-      'whatsapp business',
-      'vendas automatizadas',
-      'crm brasileiro',
-      'inteligência artificial vendas',
-      'automação marketing',
-      'leads qualificados'
+      'vendas.ia.br',
+      'domínio à venda',
+      'comprar domínio',
+      'domínio ia.br',
+      'domínio inteligência artificial',
+      'domínio premium brasil',
+      'venda de domínio registro.br',
+      'domínio vendas ia',
+      'domain for sale brazil',
+      'premium domain'
     ],
     ogType: 'website',
     twitterCard: 'summary_large_image',
-    author: 'Johnny Vaz - Vendas.IA',
+    author: 'Johnny Vaz',
     robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
   };
 
@@ -330,9 +330,9 @@ class SEOManager {
   public getPageMetadata(page: string): Partial<SEOMetadata> {
     const pageMetadata: Record<string, Partial<SEOMetadata>> = {
       home: {
-        title: 'Vendas.IA - Automação Inteligente para Vendas no Brasil',
-        description: 'Transforme suas vendas com IA. Disparo Rápido WhatsApp, automação de marketing e soluções personalizadas para empresas brasileiras.',
-        keywords: ['vendas com ia', 'automação whatsapp', 'disparo rápido', 'marketing digital brasil']
+        title: 'vendas.ia.br — domínio premium à venda',
+        description: 'O domínio vendas.ia.br está à venda. Exact match de vendas + inteligência artificial na extensão brasileira .ia.br. Propostas por e-mail.',
+        keywords: ['vendas.ia.br', 'domínio à venda', 'comprar domínio ia.br', 'domínio inteligência artificial']
       },
       'disparo-rapido': {
         title: 'Disparo Rápido WhatsApp - Automação de Mensagens em Massa | Vendas.IA',
