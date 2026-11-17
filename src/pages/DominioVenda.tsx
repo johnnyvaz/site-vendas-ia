@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { useSEO } from '@/hooks/useSEO';
+import { Link } from 'react-router-dom';
+import { useHead } from '@/hooks/useHead';
 
 const DOMAIN = 'vendas.ia.br';
 const EMAIL = 'contato@johnnyvaz.com.br';
@@ -119,50 +120,7 @@ const DominioVenda = () => {
   const refProposta = useRevelar<HTMLElement>();
   const refFaq = useRevelar<HTMLElement>();
 
-  useSEO({
-    title: 'vendas.ia.br — domínio premium à venda',
-    description:
-      'O domínio vendas.ia.br está à venda. Exact match de vendas + inteligência artificial na extensão brasileira .ia.br. Propostas por e-mail: contato@johnnyvaz.com.br.',
-    keywords: [
-      'vendas.ia.br',
-      'domínio à venda',
-      'comprar domínio ia.br',
-      'domínio inteligência artificial',
-      'domínio premium brasil',
-      'venda de domínio registro.br',
-    ],
-    canonicalUrl: 'https://vendas.ia.br/',
-    ogType: 'website',
-    structuredData: [
-      {
-        type: 'Product',
-        data: {
-          '@context': 'https://schema.org',
-          '@type': 'Product',
-          name: 'vendas.ia.br',
-          description:
-            'Domínio premium brasileiro à venda: correspondência exata de "vendas" com a extensão .ia.br, dedicada a inteligência artificial.',
-          category: 'Domain Name',
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-            priceCurrency: 'BRL',
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              priceCurrency: 'BRL',
-              valueAddedTaxIncluded: false,
-            },
-            seller: {
-              '@type': 'Person',
-              name: 'Johnny Vaz',
-              email: EMAIL,
-            },
-            url: 'https://vendas.ia.br/',
-          },
-        },
-      },
-    ],
-  });
+  useHead('/dominio-a-venda');
 
   const copiarEmail = async () => {
     try {
@@ -181,7 +139,9 @@ const DominioVenda = () => {
       <div className="dv-grao" aria-hidden="true" />
 
       <header className="dv-barra">
-        <span className="dv-mono">{DOMAIN}</span>
+        <Link className="dv-mono" to="/" style={{ color: 'inherit' }}>
+          {DOMAIN} · guia de IA para vendas
+        </Link>
         <span className="dv-mono dv-status">
           <i className="dv-ponto" aria-hidden="true" />
           domínio à venda
@@ -326,6 +286,9 @@ const DominioVenda = () => {
 
       <footer className="dv-rodape">
         <span className="dv-mono">© {new Date().getFullYear()} Johnny Vaz</span>
+        <Link className="dv-mono" to="/" style={{ color: 'inherit' }}>
+          IA para vendas: o guia
+        </Link>
         <a className="dv-mono" href={MAILTO}>
           {EMAIL}
         </a>
@@ -336,21 +299,21 @@ const DominioVenda = () => {
 
 const estilos = `
 .dv-raiz {
-  --ink: #0b0b0c;
-  --ink-2: #141416;
-  --linha: rgba(244, 241, 234, 0.12);
-  --papel: #f4f1ea;
-  --papel-suave: rgba(244, 241, 234, 0.62);
-  --ambar: #e8b24a;
-  --serifa: 'Instrument Serif', Georgia, serif;
-  --sans: 'Instrument Sans', 'Helvetica Neue', sans-serif;
+  --ink: #061724;
+  --ink-2: #0B2433;
+  --linha: rgba(91, 232, 249, 0.16);
+  --papel: #ffffff;
+  --papel-suave: rgba(211, 222, 230, 0.62);
+  --ambar: #00F0F5; /* nome mantido: é o acento (ciano da dobra) */
+  --serifa: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 
   position: relative;
   min-height: 100vh;
   background:
-    radial-gradient(900px 520px at 78% -10%, rgba(232, 178, 74, 0.16), transparent 65%),
-    radial-gradient(700px 480px at 4% 12%, rgba(232, 178, 74, 0.06), transparent 70%),
+    radial-gradient(900px 520px at 78% -10%, rgba(0, 240, 245, 0.16), transparent 65%),
+    radial-gradient(700px 480px at 4% 12%, rgba(0, 240, 245, 0.06), transparent 70%),
     var(--ink);
   color: var(--papel);
   font-family: var(--sans);
@@ -387,7 +350,7 @@ const estilos = `
   justify-content: space-between;
   padding: 1rem clamp(1.25rem, 5vw, 4.5rem);
   border-bottom: 1px solid var(--linha);
-  background: rgba(11, 11, 12, 0.72);
+  background: rgba(3, 19, 31, 0.72);
   backdrop-filter: blur(14px);
   color: var(--papel-suave);
 }
@@ -399,14 +362,14 @@ const estilos = `
   height: 6px;
   border-radius: 999px;
   background: var(--ambar);
-  box-shadow: 0 0 0 0 rgba(232, 178, 74, 0.6);
+  box-shadow: 0 0 0 0 rgba(0, 240, 245, 0.6);
   animation: dv-pulso 2.4s ease-out infinite;
 }
 
 @keyframes dv-pulso {
-  0%   { box-shadow: 0 0 0 0 rgba(232, 178, 74, 0.55); }
-  70%  { box-shadow: 0 0 0 10px rgba(232, 178, 74, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(232, 178, 74, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(0, 240, 245, 0.55); }
+  70%  { box-shadow: 0 0 0 10px rgba(0, 240, 245, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 240, 245, 0); }
 }
 
 /* Hero */
@@ -424,7 +387,7 @@ const estilos = `
   top: 52%;
   transform: rotate(180deg) translateY(50%);
   writing-mode: vertical-rl;
-  color: rgba(244, 241, 234, 0.34);
+  color: rgba(211, 222, 230, 0.34);
   letter-spacing: 0.32em;
 }
 
@@ -436,7 +399,8 @@ const estilos = `
 
 .dv-titulo {
   font-family: var(--serifa);
-  font-weight: 400;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   line-height: 0.86;
   letter-spacing: -0.02em;
   margin: 0 0 2rem;
@@ -449,13 +413,13 @@ const estilos = `
 }
 
 .dv-linha-2 { margin-left: clamp(0.5rem, 6vw, 5.5rem); color: var(--ambar); }
-.dv-linha-2 em { font-style: italic; }
+.dv-linha-2 em { font-style: normal; }
 
 .dv-lead {
   font-size: clamp(1.05rem, 2.1vw, 1.5rem);
   line-height: 1.55;
   max-width: 34ch;
-  color: rgba(244, 241, 234, 0.86);
+  color: rgba(211, 222, 230, 0.86);
   margin: 0 0 0.65rem;
 }
 
@@ -466,7 +430,7 @@ const estilos = `
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(244, 241, 234, 0.4);
+  color: rgba(211, 222, 230, 0.4);
   margin: 0 0 2.6rem;
 }
 
@@ -479,7 +443,7 @@ const estilos = `
   gap: 0.7rem;
   padding: 1rem 1.6rem;
   background: var(--ambar);
-  color: #17130a;
+  color: #03131F;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
@@ -488,7 +452,7 @@ const estilos = `
   transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease;
 }
 
-.dv-botao:hover { transform: translateY(-2px); box-shadow: 0 14px 34px -14px rgba(232, 178, 74, 0.8); }
+.dv-botao:hover { transform: translateY(-2px); box-shadow: 0 14px 34px -14px rgba(0, 240, 245, 0.8); }
 .dv-botao span { transition: transform 0.28s ease; }
 .dv-botao:hover span { transform: translateX(4px); }
 
@@ -510,11 +474,11 @@ const estilos = `
   border-top: 1px solid var(--linha);
   border-bottom: 1px solid var(--linha);
   padding: 0.85rem 0;
-  background: rgba(244, 241, 234, 0.02);
+  background: rgba(211, 222, 230, 0.02);
 }
 
 .dv-marquee-trilha { display: flex; width: max-content; animation: dv-desliza 42s linear infinite; }
-.dv-marquee-grupo { color: rgba(244, 241, 234, 0.34); white-space: nowrap; }
+.dv-marquee-grupo { color: rgba(211, 222, 230, 0.34); white-space: nowrap; }
 
 @keyframes dv-desliza {
   from { transform: translateX(0); }
@@ -531,7 +495,8 @@ const estilos = `
 
 .dv-secao-titulo {
   font-family: var(--serifa);
-  font-weight: 400;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   font-size: clamp(1.9rem, 4.5vw, 3.2rem);
   line-height: 1.05;
   margin: 0 0 2.6rem;
@@ -546,7 +511,7 @@ const estilos = `
   border-top: 1px solid var(--linha);
 }
 
-.dv-spec dt { color: rgba(244, 241, 234, 0.42); margin-bottom: 0.5rem; }
+.dv-spec dt { color: rgba(211, 222, 230, 0.42); margin-bottom: 0.5rem; }
 .dv-spec dd { margin: 0; font-size: 1.05rem; }
 
 @media (min-width: 700px) {
@@ -567,14 +532,15 @@ const estilos = `
 
 .dv-card h3 {
   font-family: var(--serifa);
-  font-weight: 400;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   font-size: 1.6rem;
   line-height: 1.15;
   margin: 1rem 0 0.75rem;
   text-transform: none;
 }
 
-.dv-card p { margin: 0; color: rgba(244, 241, 234, 0.62); line-height: 1.6; font-size: 0.95rem; }
+.dv-card p { margin: 0; color: rgba(211, 222, 230, 0.62); line-height: 1.6; font-size: 0.95rem; }
 
 /* Lista */
 .dv-lista { list-style: none; margin: 0; padding: 0; }
@@ -594,7 +560,7 @@ const estilos = `
 .dv-lista li:hover { padding-left: 1rem; }
 .dv-lista-nome { font-family: var(--serifa); font-size: clamp(1.3rem, 3vw, 2rem); }
 .dv-lista li:hover .dv-lista-nome { color: var(--ambar); }
-.dv-lista-detalhe { color: rgba(244, 241, 234, 0.38); }
+.dv-lista-detalhe { color: rgba(211, 222, 230, 0.38); }
 
 /* Proposta */
 .dv-proposta { text-align: center; }
@@ -602,19 +568,20 @@ const estilos = `
 
 .dv-proposta-titulo {
   font-family: var(--serifa);
-  font-weight: 400;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   font-size: clamp(2.4rem, 8vw, 5.5rem);
   line-height: 1;
   margin: 0 0 1.4rem;
   text-transform: none;
 }
 
-.dv-proposta-titulo em { font-style: italic; color: var(--ambar); }
+.dv-proposta-titulo em { font-style: normal; color: var(--ambar); }
 
 .dv-proposta-texto {
   max-width: 44ch;
   margin: 0 auto 2.4rem;
-  color: rgba(244, 241, 234, 0.66);
+  color: rgba(211, 222, 230, 0.66);
   line-height: 1.6;
 }
 
@@ -657,7 +624,7 @@ const estilos = `
 .dv-faq p {
   margin: 0 0 1.4rem;
   max-width: 62ch;
-  color: rgba(244, 241, 234, 0.62);
+  color: rgba(211, 222, 230, 0.62);
   line-height: 1.65;
 }
 
@@ -668,7 +635,7 @@ const estilos = `
   gap: 0.75rem;
   justify-content: space-between;
   padding: 2rem clamp(1.25rem, 5vw, 4.5rem) 2.5rem;
-  color: rgba(244, 241, 234, 0.38);
+  color: rgba(211, 222, 230, 0.38);
 }
 
 .dv-rodape a { color: inherit; text-decoration: none; }

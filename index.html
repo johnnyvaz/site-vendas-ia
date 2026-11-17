@@ -4,34 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Meta Tags -->
-    <title>vendas.ia.br — domínio premium à venda</title>
-    <meta name="description" content="O domínio vendas.ia.br está à venda. Exact match de vendas + inteligência artificial na extensão brasileira .ia.br. Propostas por e-mail: contato@johnnyvaz.com.br." />
-    <meta name="keywords" content="vendas.ia.br, domínio à venda, comprar domínio, domínio ia.br, domínio inteligência artificial, domínio premium brasil, venda de domínio registro.br" />
-    <meta name="author" content="Johnny Vaz" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <link rel="canonical" href="https://vendas.ia.br/" />
+    <!-- Cabeçalho da rota: o scripts/prerender.mjs troca o bloco entre os
+         marcadores em cada página pré-renderizada; o shell (spa.html) fica
+         com este padrão, sem canonical, e o useHead ajusta no navegador. -->
+    <!--head:inicio-->
+    <title>IA para vendas: como usar no dia a dia do time comercial · vendas.ia.br</title>
+    <meta name="description" content="Guia prático de IA para vendas: prospecção, abordagem, follow-up e CRM com IA, e o que nunca colar na IA (LGPD)." />
+    <!--head:fim-->
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="vendas.ia.br — domínio premium à venda" />
-    <meta property="og:description" content="Exact match de vendas + inteligência artificial na extensão brasileira .ia.br. Faça sua proposta: contato@johnnyvaz.com.br." />
-    <meta property="og:url" content="https://vendas.ia.br/" />
-    <meta property="og:image" content="https://vendas.ia.br/images/og-vendas-ia.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="vendas.ia.br — domínio à venda" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="vendas.ia.br" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="vendas.ia.br — domínio premium à venda" />
-    <meta name="twitter:description" content="Exact match de vendas + inteligência artificial na extensão brasileira .ia.br. Faça sua proposta." />
-    <meta name="twitter:image" content="https://vendas.ia.br/images/og-vendas-ia.jpg" />
+    <!-- Plus Jakarta Sans: primeira dobra (src/components/dobra) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" />
 
     <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#0b0b0c" />
+    <meta name="theme-color" content="#061724" />
     <meta name="format-detection" content="telephone=no" />
 
     <!-- PWA Configuration -->
@@ -52,75 +39,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png" />
     <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167x167.png" />
 
-    <!-- Structured Data - JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://vendas.ia.br/#website",
-          "url": "https://vendas.ia.br/",
-          "name": "vendas.ia.br — domínio à venda",
-          "description": "Página de venda do domínio vendas.ia.br.",
-          "inLanguage": "pt-BR"
-        },
-        {
-          "@type": "Product",
-          "@id": "https://vendas.ia.br/#dominio",
-          "name": "vendas.ia.br",
-          "description": "Domínio premium brasileiro à venda: correspondência exata de \"vendas\" na extensão .ia.br, dedicada a inteligência artificial. Transferência via Registro.br.",
-          "category": "Domain Name",
-          "url": "https://vendas.ia.br/",
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock",
-            "priceCurrency": "BRL",
-            "url": "https://vendas.ia.br/",
-            "seller": {
-              "@type": "Person",
-              "name": "Johnny Vaz",
-              "email": "contato@johnnyvaz.com.br"
-            }
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://vendas.ia.br/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Qual o valor pedido pelo domínio vendas.ia.br?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Não há preço fixo publicado. Envie sua proposta para contato@johnnyvaz.com.br e a resposta vem com aceite, contraproposta ou recusa."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Como funciona a transferência do domínio?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Pela troca de titularidade no Registro.br. Após o pagamento confirmado, o processo é iniciado e acompanhado até a conclusão junto ao novo titular."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Aceita parcelamento ou intermediário?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sim, negociável. Para valores maiores é possível usar serviço de custódia (escrow) ou contrato de compra e venda com pagamento em etapas."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
