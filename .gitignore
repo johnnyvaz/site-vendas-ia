@@ -29,3 +29,6 @@ dist-ssr
 dist-server
 
 bundle-analysis.html
+
+# Cópias HTML brutas da pesquisa de concorrentes (ficam só locais)
+docs/pesquisas/*/raw/

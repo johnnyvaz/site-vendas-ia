@@ -1,0 +1,39 @@
+{
+ "diagnostico": {
+  "id": 594090,
+  "user": "StartupStockPhotos",
+  "page": "https://pixabay.com/photos/startup-meeting-brainstorming-594090/",
+  "licenca": "Pixabay Content License"
+ },
+ "reuniao": {
+  "id": 2284501,
+  "user": "mwitt1337",
+  "page": "https://pixabay.com/photos/meeting-business-architect-office-2284501/",
+  "licenca": "Pixabay Content License",
+  "uso": "baixada, não usada no site"
+ },
+ "oficina": {
+  "id": 10171012,
+  "user": "geralt",
+  "page": "https://pixabay.com/photos/eam-workshop-office-collaboration-10171012/",
+  "licenca": "Pixabay Content License"
+ },
+ "whatsapp": {
+  "id": 7304257,
+  "user": "IqbalStock",
+  "page": "https://pixabay.com/photos/business-smartphone-hands-7304257/",
+  "licenca": "Pixabay Content License"
+ },
+ "revisao": {
+  "id": 10570514,
+  "user": "Sdbtyyy",
+  "page": "https://pixabay.com/photos/collaboration-colleagues-office-10570514/",
+  "licenca": "Pixabay Content License"
+ },
+ "conversa": {
+  "id": 10322093,
+  "user": "erwinbosman",
+  "page": "https://pixabay.com/photos/meeting-discussion-caf%C3%A9-coffee-10322093/",
+  "licenca": "Pixabay Content License"
+ }
+}

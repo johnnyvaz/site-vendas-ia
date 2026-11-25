@@ -1,0 +1,1297 @@
+{
+ "main": [
+  [
+   "home",
+   "Prospecta | Marketing, CRM e expansão de franquias há 15 anos",
+   "https://www.prospecta.digital/",
+   "Há 15 anos ao lado de franqueadoras: marketing, CRM e acompanhamento semanal com o time de expansão. As redes clientes venderam 1.200 franquias em 2025."
+  ],
+  [
+   "metodo",
+   "Método Prospecta: os 6 pilares da expansão de franquias",
+   "https://www.prospecta.digital/metodo",
+   "Atração, conversão, pós-conversão, comercial, nutrição e ativação: o método que conecta marketing e comercial até o contrato assinado."
+  ],
+  [
+   "resultados",
+   "Resultados: redes que vendem mais franquias com a Prospecta",
+   "https://www.prospecta.digital/resultados",
+   "1.200 franquias vendidas pelas redes clientes em 2025 e 500 no 1º trimestre de 2026. Cases de Mercadão dos Óculos, Bella Capri, Lavateria e Milky Moo."
+  ],
+  [
+   "sobre",
+   "Sobre a Prospecta | 15 anos ajudando franqueadoras a expandir",
+   "https://www.prospecta.digital/sobre",
+   "Conheça a Prospecta, de São José do Rio Preto (SP): 15 anos de história, mais de uma década no franchising, com David Borges e Fernanda Danilaits."
+  ],
+  [
+   "perguntas-frequentes",
+   "Perguntas frequentes | Prospecta para franqueadoras",
+   "https://www.prospecta.digital/perguntas-frequentes",
+   "Como a Prospecta trabalha, como cobra, prazo de implantação, CRM, fidelidade e para quem é."
+  ],
+  [
+   "expansao-de-franquias",
+   "Expansão de franquias: marketing e CRM | Prospecta",
+   "https://www.prospecta.digital/expansao-de-franquias",
+   "Agência de marketing para franqueadoras: tráfego, landing pages, CRM e acompanhamento semanal com o time de expansão. As redes clientes venderam 1.200 franquias em 2025."
+  ],
+  [
+   "como-vender-franquias",
+   "Como vender franquias: guia do lead ao contrato | Prospecta",
+   "https://www.prospecta.digital/como-vender-franquias",
+   "Como vender franquias da sua rede: calcular a meta, atrair quem tem perfil, responder rápido, conduzir a reunião, nutrir e fechar. O caminho usado pelas redes atendidas pela Prospecta."
+  ],
+  [
+   "crm-para-franquias",
+   "CRM para franquias: o funil de expansão | Prospecta",
+   "https://www.prospecta.digital/crm-para-franquias",
+   "Como montar o CRM da expansão: etapas enxutas, motivos de perda, perfil separado de momento e automações. O funil que a Prospecta implanta no Cubo Suite."
+  ]
+ ],
+ "posts": [
+  {
+   "date": "2026-11-24",
+   "slug": "primeira-resposta-whatsapp-candidato-franqueado",
+   "title": "Primeira resposta no WhatsApp: como medir e reduzir o tempo de atendimento ao candidato a franqueado",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/primeira-resposta-whatsapp-candidato-franqueado/",
+   "words": 838,
+   "file": "2026-11-24_primeira-resposta-whatsapp-candidato-franqueado.md"
+  },
+  {
+   "date": "2026-11-24",
+   "slug": "faixa-de-investimento-da-franquia",
+   "title": "Faixa de investimento da franquia: como qualificar o capital do candidato antes da reunião",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/faixa-de-investimento-da-franquia/",
+   "words": 848,
+   "file": "2026-11-24_faixa-de-investimento-da-franquia.md"
+  },
+  {
+   "date": "2026-11-23",
+   "slug": "area-de-atuacao-do-franqueado",
+   "title": "Área de atuação do franqueado: como definir o território e captar quem conhece a praça",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/area-de-atuacao-do-franqueado/",
+   "words": 854,
+   "file": "2026-11-23_area-de-atuacao-do-franqueado.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "dezembro-na-franqueadora",
+   "title": "Dezembro na franqueadora: o que preparar para janeiro começar vendendo",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/dezembro-na-franqueadora/",
+   "words": 1173,
+   "file": "2026-11-22_dezembro-na-franqueadora.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "horario-real-do-candidato",
+   "title": "Horário real do candidato: como descobrir quando o seu público atende",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/horario-real-do-candidato/",
+   "words": 1250,
+   "file": "2026-11-22_horario-real-do-candidato.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "time-interno-ou-agencia-na-expansao",
+   "title": "Time interno ou agência na expansão: o que manter dentro da franqueadora e o que terceirizar",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/time-interno-ou-agencia-na-expansao/",
+   "words": 1110,
+   "file": "2026-11-22_time-interno-ou-agencia-na-expansao.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "taxa-de-conversao-do-funil-de-expansao",
+   "title": "Taxa de conversão do funil de expansão: como medir cada etapa antes de definir a meta",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/taxa-de-conversao-do-funil-de-expansao/",
+   "words": 1193,
+   "file": "2026-11-22_taxa-de-conversao-do-funil-de-expansao.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "pre-qualificacao-automatica-de-candidatos",
+   "title": "Pré-qualificação automática: o que o atendimento automático pergunta e o que fica com o consultor",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/pre-qualificacao-automatica-de-candidatos/",
+   "words": 1054,
+   "file": "2026-11-22_pre-qualificacao-automatica-de-candidatos.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "sinais-de-alerta-na-agencia-de-expansao",
+   "title": "Sinais de alerta na agência de expansão: quando o relatório mostra lead e esconde a venda",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/sinais-de-alerta-na-agencia-de-expansao/",
+   "words": 1113,
+   "file": "2026-11-22_sinais-de-alerta-na-agencia-de-expansao.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "tentativas-de-contato-com-candidato",
+   "title": "5 tentativas em 8 dias: a cadência mínima antes de dar o candidato como perdido",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/tentativas-de-contato-com-candidato/",
+   "words": 1203,
+   "file": "2026-11-22_tentativas-de-contato-com-candidato.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "sazonalidade-na-venda-de-franquias",
+   "title": "Sazonalidade na venda de franquias: como distribuir a meta pelos meses do ano",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/sazonalidade-na-venda-de-franquias/",
+   "words": 1210,
+   "file": "2026-11-22_sazonalidade-na-venda-de-franquias.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "perguntas-para-fazer-a-agencia-antes-de-contratar",
+   "title": "Perguntas para fazer à agência antes de contratar (e as respostas que importam)",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/perguntas-para-fazer-a-agencia-antes-de-contratar/",
+   "words": 1057,
+   "file": "2026-11-22_perguntas-para-fazer-a-agencia-antes-de-contratar.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "tempo-de-primeiro-contato",
+   "title": "Tempo de primeiro contato: como medir quanto o seu time demora para responder o candidato",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/tempo-de-primeiro-contato/",
+   "words": 1392,
+   "file": "2026-11-22_tempo-de-primeiro-contato.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "perguntas-para-qualificar-candidato-a-franqueado",
+   "title": "Perguntas para qualificar candidato a franqueado, critério por critério",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/perguntas-para-qualificar-candidato-a-franqueado/",
+   "words": 1137,
+   "file": "2026-11-22_perguntas-para-qualificar-candidato-a-franqueado.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "planejamento-comercial-da-expansao",
+   "title": "Planejamento comercial da expansão: o plano anual que o time de expansão consegue executar",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/planejamento-comercial-da-expansao/",
+   "words": 1236,
+   "file": "2026-11-22_planejamento-comercial-da-expansao.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "o-que-medir-no-contrato-com-a-agencia",
+   "title": "O que medir no contrato com a agência de expansão: de custo por lead a custo por franquia vendida",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/o-que-medir-no-contrato-com-a-agencia/",
+   "words": 1106,
+   "file": "2026-11-22_o-que-medir-no-contrato-com-a-agencia.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "roteiro-do-primeiro-contato-com-candidato",
+   "title": "Roteiro do primeiro contato com o candidato a franqueado: o que dizer para sair com a reunião marcada",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/roteiro-do-primeiro-contato-com-candidato/",
+   "words": 1296,
+   "file": "2026-11-22_roteiro-do-primeiro-contato-com-candidato.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "lead-qualificado-na-franquia",
+   "title": "Lead qualificado na franquia: a definição que marketing e expansão precisam assinar juntos",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/lead-qualificado-na-franquia/",
+   "words": 1122,
+   "file": "2026-11-22_lead-qualificado-na-franquia.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "meta-por-consultor-de-expansao",
+   "title": "Meta por consultor de expansão: como dividir o número do ano pelo time",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/meta-por-consultor-de-expansao/",
+   "words": 1152,
+   "file": "2026-11-22_meta-por-consultor-de-expansao.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "agencia-consultoria-ou-formatadora",
+   "title": "Agência, consultoria de franquias ou formatadora: quem faz o quê na expansão",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/agencia-consultoria-ou-formatadora/",
+   "words": 1067,
+   "file": "2026-11-22_agencia-consultoria-ou-formatadora.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "lead-de-franquia-fora-do-horario",
+   "title": "Lead de franquia fora do horário comercial: como responder à noite e no fim de semana",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/lead-de-franquia-fora-do-horario/",
+   "words": 1307,
+   "file": "2026-11-22_lead-de-franquia-fora-do-horario.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "formulario-de-qualificacao-de-candidatos",
+   "title": "Formulário de franquia que qualifica: quais campos pedir sem derrubar a conversão",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/formulario-de-qualificacao-de-candidatos/",
+   "words": 1099,
+   "file": "2026-11-22_formulario-de-qualificacao-de-candidatos.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "meta-de-vendas-de-franquias",
+   "title": "Meta de vendas de franquias: como a franqueadora define o número do ano e o desdobra até o lead",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/meta-de-vendas-de-franquias/",
+   "words": 1787,
+   "file": "2026-11-22_meta-de-vendas-de-franquias.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "como-escolher-agencia-para-franquias",
+   "title": "Como escolher uma agência para franquias: os critérios que separam lead de franquia vendida",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/como-escolher-agencia-para-franquias/",
+   "words": 1789,
+   "file": "2026-11-22_como-escolher-agencia-para-franquias.md"
+  },
+  {
+   "date": "2026-11-22",
+   "slug": "automatizar-o-primeiro-contato",
+   "title": "Quando automatizar o primeiro contato (e quando o consultor liga na hora)",
+   "author": "Prospecta (prospectadev)",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/automatizar-o-primeiro-contato/",
+   "words": 1342,
+   "file": "2026-11-22_automatizar-o-primeiro-contato.md"
+  },
+  {
+   "date": "2026-11-20",
+   "slug": "segunda-unidade-do-franqueado",
+   "title": "Segunda unidade do franqueado: como o relacionamento desde o lead prepara a expansão dentro da rede",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/segunda-unidade-do-franqueado/",
+   "words": 988,
+   "file": "2026-11-20_segunda-unidade-do-franqueado.md"
+  },
+  {
+   "date": "2026-11-20",
+   "slug": "capital-de-giro-do-candidato-a-franqueado",
+   "title": "Capital do candidato a franqueado: como confirmar investimento e capital de giro sem constranger",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/capital-de-giro-do-candidato-a-franqueado/",
+   "words": 1112,
+   "file": "2026-11-20_capital-de-giro-do-candidato-a-franqueado.md"
+  },
+  {
+   "date": "2026-11-19",
+   "slug": "retorno-da-ia-no-atendimento-de-candidatos",
+   "title": "IA no atendimento ao candidato a franqueado: como medir o retorno antes de ampliar o investimento",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/retorno-da-ia-no-atendimento-de-candidatos/",
+   "words": 996,
+   "file": "2026-11-19_retorno-da-ia-no-atendimento-de-candidatos.md"
+  },
+  {
+   "date": "2026-11-19",
+   "slug": "captacao-de-franqueados-rede-pequena",
+   "title": "Captação de franqueados em rede pequena: o que o Mapeamento da ABF e do Sebrae muda no plano",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/captacao-de-franqueados-rede-pequena/",
+   "words": 989,
+   "file": "2026-11-19_captacao-de-franqueados-rede-pequena.md"
+  },
+  {
+   "date": "2026-11-18",
+   "slug": "whatsapp-na-expansao-de-franquias",
+   "title": "WhatsApp na expansão de franquias: o que muda no atendimento ao candidato com a cobrança por mensagem",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/whatsapp-na-expansao-de-franquias/",
+   "words": 974,
+   "file": "2026-11-18_whatsapp-na-expansao-de-franquias.md"
+  },
+  {
+   "date": "2026-11-18",
+   "slug": "repasse-de-franquia-captar-candidato",
+   "title": "Repasse de franquia: como captar e qualificar quem compra uma unidade já em operação",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/repasse-de-franquia-captar-candidato/",
+   "words": 1023,
+   "file": "2026-11-18_repasse-de-franquia-captar-candidato.md"
+  },
+  {
+   "date": "2026-11-17",
+   "slug": "qualificar-multifranqueado",
+   "title": "Como qualificar um multifranqueado: o que a disputa entre Wendy’s e uma operadora de 314 lojas ensina",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/qualificar-multifranqueado/",
+   "words": 1013,
+   "file": "2026-11-17_qualificar-multifranqueado.md"
+  },
+  {
+   "date": "2026-11-17",
+   "slug": "captar-candidatos-microfranquia-multifranqueado",
+   "title": "Microfranquia e multifranqueado: como captar cada perfil de candidato",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/captar-candidatos-microfranquia-multifranqueado/",
+   "words": 1037,
+   "file": "2026-11-17_captar-candidatos-microfranquia-multifranqueado.md"
+  },
+  {
+   "date": "2026-11-16",
+   "slug": "ranking-de-franquias-por-cidade",
+   "title": "Ranking de franquias por cidade: como usar sem escolher a praça pelo retrovisor",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/ranking-de-franquias-por-cidade/",
+   "words": 942,
+   "file": "2026-11-16_ranking-de-franquias-por-cidade.md"
+  },
+  {
+   "date": "2026-11-13",
+   "slug": "priorizar-cidades-expansao-franquia",
+   "title": "Como priorizar cidades na expansão de uma franquia: o que o plano do Divino Fogão ensina",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/priorizar-cidades-expansao-franquia/",
+   "words": 912,
+   "file": "2026-11-13_priorizar-cidades-expansao-franquia.md"
+  },
+  {
+   "date": "2026-11-13",
+   "slug": "loja-propria-para-franqueado",
+   "title": "Passar loja própria para franqueado: como achar e qualificar quem vai operar",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/loja-propria-para-franqueado/",
+   "words": 989,
+   "file": "2026-11-13_loja-propria-para-franqueado.md"
+  },
+  {
+   "date": "2026-11-12",
+   "slug": "ia-no-atendimento-de-leads-de-franquia",
+   "title": "IA no atendimento de leads de franquia: onde ajuda e o que ainda precisa de gente",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/ia-no-atendimento-de-leads-de-franquia/",
+   "words": 984,
+   "file": "2026-11-12_ia-no-atendimento-de-leads-de-franquia.md"
+  },
+  {
+   "date": "2026-11-11",
+   "slug": "candidato-a-franqueado-ate-a-assinatura",
+   "title": "Da reunião à assinatura: como apresentar o padrão da rede ao candidato a franqueado",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/candidato-a-franqueado-ate-a-assinatura/",
+   "words": 927,
+   "file": "2026-11-11_candidato-a-franqueado-ate-a-assinatura.md"
+  },
+  {
+   "date": "2026-11-11",
+   "slug": "quantos-leads-para-vender-franquias",
+   "title": "Quantos leads para vender franquias? A conta da meta reversa, do contrato ao lead",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/quantos-leads-para-vender-franquias/",
+   "words": 1068,
+   "file": "2026-11-11_quantos-leads-para-vender-franquias.md"
+  },
+  {
+   "date": "2026-11-11",
+   "slug": "onboarding-de-franqueado",
+   "title": "Onboarding de franqueado: por que a venda não termina na assinatura do contrato",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/onboarding-de-franqueado/",
+   "words": 832,
+   "file": "2026-11-11_onboarding-de-franqueado.md"
+  },
+  {
+   "date": "2026-11-11",
+   "slug": "indicadores-de-expansao-de-franquias",
+   "title": "Indicadores de expansão de franquias: o que acompanhar por canal, e não só no total",
+   "author": "Fernanda Danilaits",
+   "cats": "CRM, Franquias",
+   "link": "https://www.prospecta.digital/conteudo/indicadores-de-expansao-de-franquias/",
+   "words": 991,
+   "file": "2026-11-11_indicadores-de-expansao-de-franquias.md"
+  },
+  {
+   "date": "2026-11-09",
+   "slug": "qualificar-candidato-a-franqueado",
+   "title": "Qualificação de candidatos a franqueado: como separar curioso de comprador antes da reunião",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/qualificar-candidato-a-franqueado/",
+   "words": 1557,
+   "file": "2026-11-09_qualificar-candidato-a-franqueado.md"
+  },
+  {
+   "date": "2026-11-09",
+   "slug": "velocidade-de-resposta-lead-franquia",
+   "title": "Velocidade de resposta ao lead de franquia: por que o candidato esfria em minutos e como responder primeiro",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/velocidade-de-resposta-lead-franquia/",
+   "words": 1800,
+   "file": "2026-11-09_velocidade-de-resposta-lead-franquia.md"
+  },
+  {
+   "date": "2026-11-05",
+   "slug": "como-criar-uma-estrategia-de-seo-alem-das-palavras-chave",
+   "title": "Como criar uma estratégia de SEO além das palavras-chave",
+   "author": "Flaviana Ribeiro",
+   "cats": "SEO",
+   "link": "https://www.prospecta.digital/conteudo/como-criar-uma-estrategia-de-seo-alem-das-palavras-chave/",
+   "words": 3401,
+   "file": "2026-11-05_como-criar-uma-estrategia-de-seo-alem-das-palavras-chave.md"
+  },
+  {
+   "date": "2026-11-03",
+   "slug": "google-search-profile",
+   "title": "Google Search Profile: o que é, como funciona e por que sua marca precisa conhecer essa novidade?",
+   "author": "David Borges",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/google-search-profile/",
+   "words": 1125,
+   "file": "2026-11-03_google-search-profile.md"
+  },
+  {
+   "date": "2026-10-29",
+   "slug": "agentes-de-ia-como-essa-tecnologia-esta-mudando-processos-empresariais",
+   "title": "Agentes de IA: como essa tecnologia está mudando processos empresariais",
+   "author": "David Borges",
+   "cats": "Business, IA",
+   "link": "https://www.prospecta.digital/conteudo/agentes-de-ia-como-essa-tecnologia-esta-mudando-processos-empresariais/",
+   "words": 1127,
+   "file": "2026-10-29_agentes-de-ia-como-essa-tecnologia-esta-mudando-processos-empresariais.md"
+  },
+  {
+   "date": "2026-10-27",
+   "slug": "conteudo-evergreen-como-criar-materiais-que-continuam-gerando-resultados",
+   "title": "Conteúdo evergreen: como criar materiais que continuam gerando resultados",
+   "author": "David Borges",
+   "cats": "Conteúdo",
+   "link": "https://www.prospecta.digital/conteudo/conteudo-evergreen-como-criar-materiais-que-continuam-gerando-resultados/",
+   "words": 1843,
+   "file": "2026-10-27_conteudo-evergreen-como-criar-materiais-que-continuam-gerando-resultados.md"
+  },
+  {
+   "date": "2026-10-21",
+   "slug": "objecoes-de-vendas-como-preparar-o-time-para-negociacoes-dificeis",
+   "title": "Objeções de vendas: como preparar o time para negociações difíceis",
+   "author": "Victor Zardini",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/objecoes-de-vendas-como-preparar-o-time-para-negociacoes-dificeis/",
+   "words": 1734,
+   "file": "2026-10-21_objecoes-de-vendas-como-preparar-o-time-para-negociacoes-dificeis.md"
+  },
+  {
+   "date": "2026-10-13",
+   "slug": "cultura-de-ia",
+   "title": "Como criar uma cultura de IA dentro das empresas",
+   "author": "Carol Fernandes",
+   "cats": "IA",
+   "link": "https://www.prospecta.digital/conteudo/cultura-de-ia/",
+   "words": 874,
+   "file": "2026-10-13_cultura-de-ia.md"
+  },
+  {
+   "date": "2026-10-06",
+   "slug": "ia-preditiva-e-generativa",
+   "title": "IA preditiva x IA generativa: qual a diferença e quando usar cada uma",
+   "author": "David Borges",
+   "cats": "IA",
+   "link": "https://www.prospecta.digital/conteudo/ia-preditiva-e-generativa/",
+   "words": 915,
+   "file": "2026-10-06_ia-preditiva-e-generativa.md"
+  },
+  {
+   "date": "2026-09-29",
+   "slug": "revenue-operations",
+   "title": "Revenue Operations: como unir marketing, vendas e dados em uma única operação",
+   "author": "David Borges",
+   "cats": "Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/revenue-operations/",
+   "words": 847,
+   "file": "2026-09-29_revenue-operations.md"
+  },
+  {
+   "date": "2026-09-15",
+   "slug": "marketing-orientado-a-receita",
+   "title": "Marketing orientado a receita: como transformar ações em impacto comercial",
+   "author": "Nayara Maira",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/marketing-orientado-a-receita/",
+   "words": 1043,
+   "file": "2026-09-15_marketing-orientado-a-receita.md"
+  },
+  {
+   "date": "2026-09-09",
+   "slug": "lead-barato",
+   "title": "Lead barato ou candidato qualificado: qual número deve orientar a mídia da expansão",
+   "author": "David Borges",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/lead-barato/",
+   "words": 1081,
+   "file": "2026-09-09_lead-barato.md"
+  },
+  {
+   "date": "2026-09-02",
+   "slug": "repescagem-de-leads",
+   "title": "Repescagem de Leads de franquia: como recuperar candidatos que pararam de responder",
+   "author": "Fernanda Danilaits",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/repescagem-de-leads/",
+   "words": 1066,
+   "file": "2026-09-02_repescagem-de-leads.md"
+  },
+  {
+   "date": "2026-08-25",
+   "slug": "feiras-de-franquias",
+   "title": "Como transformar leads de feiras de franquias em reuniões comerciais",
+   "author": "Victor Zardini",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/feiras-de-franquias/",
+   "words": 1066,
+   "file": "2026-08-25_feiras-de-franquias.md"
+  },
+  {
+   "date": "2026-08-18",
+   "slug": "fadiga-de-criativos",
+   "title": "Fadiga de criativos: como saber quando um anúncio parou de funcionar?",
+   "author": "Carol Fernandes",
+   "cats": "ADS",
+   "link": "https://www.prospecta.digital/conteudo/fadiga-de-criativos/",
+   "words": 1117,
+   "file": "2026-08-18_fadiga-de-criativos.md"
+  },
+  {
+   "date": "2026-08-12",
+   "slug": "distribuica-de-leads",
+   "title": "Distribuição de leads: como encaminhar cada oportunidade para o vendedor certo",
+   "author": "Nayara Maira",
+   "cats": "CRM, Leads",
+   "link": "https://www.prospecta.digital/conteudo/distribuica-de-leads/",
+   "words": 1169,
+   "file": "2026-08-12_distribuica-de-leads.md"
+  },
+  {
+   "date": "2026-08-06",
+   "slug": "cac-de-expansao-de-franquias",
+   "title": "CAC de expansão de franquias: quanto custa conquistar um novo franqueado?",
+   "author": "Nayara Maira",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/cac-de-expansao-de-franquias/",
+   "words": 966,
+   "file": "2026-08-06_cac-de-expansao-de-franquias.md"
+  },
+  {
+   "date": "2026-07-24",
+   "slug": "7-formas-integrar-marketing-digital-ia-generativa-2026",
+   "title": "7 formas de integrar marketing digital e IA generativa até 2026",
+   "author": "Nayara Maira",
+   "cats": "IA",
+   "link": "https://www.prospecta.digital/conteudo/7-formas-integrar-marketing-digital-ia-generativa-2026/",
+   "words": 1374,
+   "file": "2026-07-24_7-formas-integrar-marketing-digital-ia-generativa-2026.md"
+  },
+  {
+   "date": "2026-07-24",
+   "slug": "usar-ia-para-prever-comportamento-do-cliente-em-vendas",
+   "title": "Como usar IA para prever o comportamento do cliente em vendas",
+   "author": "Nayara Maira",
+   "cats": "IA",
+   "link": "https://www.prospecta.digital/conteudo/usar-ia-para-prever-comportamento-do-cliente-em-vendas/",
+   "words": 1461,
+   "file": "2026-07-24_usar-ia-para-prever-comportamento-do-cliente-em-vendas.md"
+  },
+  {
+   "date": "2026-07-24",
+   "slug": "7-erros-comuns-ao-alinhar-marketing-e-vendas",
+   "title": "7 erros comuns ao alinhar marketing e vendas nas empresas",
+   "author": "Nayara Maira",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/7-erros-comuns-ao-alinhar-marketing-e-vendas/",
+   "words": 1358,
+   "file": "2026-07-24_7-erros-comuns-ao-alinhar-marketing-e-vendas.md"
+  },
+  {
+   "date": "2026-05-05",
+   "slug": "como-vender-mais",
+   "title": "Como vender mais sem depender de desconto",
+   "author": "David Borges",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/como-vender-mais/",
+   "words": 1352,
+   "file": "2026-05-05_como-vender-mais.md"
+  },
+  {
+   "date": "2026-04-29",
+   "slug": "marketing-e-vendas-conectados",
+   "title": "Marketing e vendas conectados: como parar de perder oportunidades no meio do caminho",
+   "author": "Victor Zardini",
+   "cats": "Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/marketing-e-vendas-conectados/",
+   "words": 1567,
+   "file": "2026-04-29_marketing-e-vendas-conectados.md"
+  },
+  {
+   "date": "2026-04-20",
+   "slug": "funil-de-vendas-moderno-o-que-mudou-e-como-vender-melhor-sem-empurrar-nada",
+   "title": "Funil de vendas moderno: o que mudou e como vender melhor sem empurrar nada",
+   "author": "David Borges",
+   "cats": "Leads, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/funil-de-vendas-moderno-o-que-mudou-e-como-vender-melhor-sem-empurrar-nada/",
+   "words": 1436,
+   "file": "2026-04-20_funil-de-vendas-moderno-o-que-mudou-e-como-vender-melhor-sem-empurrar-nada.md"
+  },
+  {
+   "date": "2026-04-07",
+   "slug": "ia-generativa-qual-a-melhor-estrategia-de-geo",
+   "title": "IA Generativa: qual a melhor estratégia de GEO?",
+   "author": "Flaviana Ribeiro",
+   "cats": "Conteúdo",
+   "link": "https://www.prospecta.digital/conteudo/ia-generativa-qual-a-melhor-estrategia-de-geo/",
+   "words": 1212,
+   "file": "2026-04-07_ia-generativa-qual-a-melhor-estrategia-de-geo.md"
+  },
+  {
+   "date": "2026-03-26",
+   "slug": "planejamento-de-conteudo-b2b-conteudos-que-convertem",
+   "title": "Planejamento de conteúdo B2B: conteúdos que convertem",
+   "author": "David Borges",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/planejamento-de-conteudo-b2b-conteudos-que-convertem/",
+   "words": 728,
+   "file": "2026-03-26_planejamento-de-conteudo-b2b-conteudos-que-convertem.md"
+  },
+  {
+   "date": "2026-03-18",
+   "slug": "como-evitar-o-sumico-de-leads-apos-proposta-e-como-o-cx-pode-resolver-isso",
+   "title": "Como evitar o sumiço de leads após proposta e como o CX pode resolver isso",
+   "author": "David Borges",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/como-evitar-o-sumico-de-leads-apos-proposta-e-como-o-cx-pode-resolver-isso/",
+   "words": 731,
+   "file": "2026-03-18_como-evitar-o-sumico-de-leads-apos-proposta-e-como-o-cx-pode-resolver-isso.md"
+  },
+  {
+   "date": "2026-03-10",
+   "slug": "hiperpersonalizacao-e-automacao-na-pratica-como-montar-fluxos-dinamicos-e-vivos",
+   "title": "Hiperpersonalização e automação na prática: como montar fluxos dinâmicos e vivos",
+   "author": "Fernanda Danilaits",
+   "cats": "Conteúdo, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/hiperpersonalizacao-e-automacao-na-pratica-como-montar-fluxos-dinamicos-e-vivos/",
+   "words": 732,
+   "file": "2026-03-10_hiperpersonalizacao-e-automacao-na-pratica-como-montar-fluxos-dinamicos-e-vivos.md"
+  },
+  {
+   "date": "2026-03-03",
+   "slug": "lead-scoring-2-0",
+   "title": "Lead scoring para franqueadoras: como pontuar candidatos por perfil e por comportamento",
+   "author": "Flaviana Ribeiro",
+   "cats": "Franquias, Leads",
+   "link": "https://www.prospecta.digital/conteudo/lead-scoring-2-0/",
+   "words": 1200,
+   "file": "2026-03-03_lead-scoring-2-0.md"
+  },
+  {
+   "date": "2026-02-24",
+   "slug": "social-selling-b2b-como-transformar-linkedin-whatsapp-e-conteudo-em-vendas-reais",
+   "title": "Social Selling B2B: como transformar LinkedIn, WhatsApp e conteúdo em vendas reais",
+   "author": "Nayara Maira",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/social-selling-b2b-como-transformar-linkedin-whatsapp-e-conteudo-em-vendas-reais/",
+   "words": 845,
+   "file": "2026-02-24_social-selling-b2b-como-transformar-linkedin-whatsapp-e-conteudo-em-vendas-reais.md"
+  },
+  {
+   "date": "2026-02-20",
+   "slug": "o-papel-do-crm-na-retencao",
+   "title": "O papel do CRM na retenção de clientes e no aumento do LTV",
+   "author": "David Borges",
+   "cats": "CRM",
+   "link": "https://www.prospecta.digital/conteudo/o-papel-do-crm-na-retencao/",
+   "words": 707,
+   "file": "2026-02-20_o-papel-do-crm-na-retencao.md"
+  },
+  {
+   "date": "2026-02-03",
+   "slug": "dark-funnel-por-que-grande-parte-da-sua-jornada-de-vendas-e-invisivel",
+   "title": "Dark Funnel: por que grande parte da sua jornada de vendas é invisível",
+   "author": "Flaviana Ribeiro",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/dark-funnel-por-que-grande-parte-da-sua-jornada-de-vendas-e-invisivel/",
+   "words": 810,
+   "file": "2026-02-03_dark-funnel-por-que-grande-parte-da-sua-jornada-de-vendas-e-invisivel.md"
+  },
+  {
+   "date": "2026-01-27",
+   "slug": "site-dinamico-ou-site-estatico-qual-e-o-melhor",
+   "title": "Site dinâmico ou site estático: qual é o melhor?",
+   "author": "Fernanda Danilaits",
+   "cats": "SEO",
+   "link": "https://www.prospecta.digital/conteudo/site-dinamico-ou-site-estatico-qual-e-o-melhor/",
+   "words": 644,
+   "file": "2026-01-27_site-dinamico-ou-site-estatico-qual-e-o-melhor.md"
+  },
+  {
+   "date": "2026-01-20",
+   "slug": "planejamento-de-marketing-2026-as-prioridades-que-vao-definir-quem-cresce-e-quem-fica-para-tras",
+   "title": "Planejamento de Marketing 2026: as prioridades que vão definir quem cresce e quem fica para trás",
+   "author": "Carol Fernandes",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/planejamento-de-marketing-2026-as-prioridades-que-vao-definir-quem-cresce-e-quem-fica-para-tras/",
+   "words": 901,
+   "file": "2026-01-20_planejamento-de-marketing-2026-as-prioridades-que-vao-definir-quem-cresce-e-quem-fica-para-tras.md"
+  },
+  {
+   "date": "2026-01-13",
+   "slug": "conteudo-interativo-que-funciona-formatos-para-atrair-engajar-e-converter",
+   "title": "Conteúdo interativo que funciona: formatos para atrair, engajar e converter",
+   "author": "Nayara Maira",
+   "cats": "redes sociais",
+   "link": "https://www.prospecta.digital/conteudo/conteudo-interativo-que-funciona-formatos-para-atrair-engajar-e-converter/",
+   "words": 728,
+   "file": "2026-01-13_conteudo-interativo-que-funciona-formatos-para-atrair-engajar-e-converter.md"
+  },
+  {
+   "date": "2025-12-23",
+   "slug": "como-criar-trilha-de-e-mails-b2b-guiando-o-lead-ate-a-conversao-com-logica-e-contexto",
+   "title": "Como criar trilha de e-mails B2B: guiando o lead até a conversão com lógica e contexto",
+   "author": "Victor Zardini",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/como-criar-trilha-de-e-mails-b2b-guiando-o-lead-ate-a-conversao-com-logica-e-contexto/",
+   "words": 700,
+   "file": "2025-12-23_como-criar-trilha-de-e-mails-b2b-guiando-o-lead-ate-a-conversao-com-logica-e-contexto.md"
+  },
+  {
+   "date": "2025-12-16",
+   "slug": "conteudo-pos-venda-b2b-como-manter-clientes-engajados-apos-a-venda",
+   "title": "Conteúdo pós-venda B2B: como manter clientes engajados após a venda",
+   "author": "Nayara Maira",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/conteudo-pos-venda-b2b-como-manter-clientes-engajados-apos-a-venda/",
+   "words": 684,
+   "file": "2025-12-16_conteudo-pos-venda-b2b-como-manter-clientes-engajados-apos-a-venda.md"
+  },
+  {
+   "date": "2025-12-09",
+   "slug": "social-commerce-e-vendas-dentro-das-redes-o-que-funciona-hoje-e-amanha",
+   "title": "Social Commerce e vendas dentro das redes: o que funciona hoje (e amanhã)",
+   "author": "Fernanda Danilaits",
+   "cats": "Vendas",
+   "link": "https://www.prospecta.digital/conteudo/social-commerce-e-vendas-dentro-das-redes-o-que-funciona-hoje-e-amanha/",
+   "words": 783,
+   "file": "2025-12-09_social-commerce-e-vendas-dentro-das-redes-o-que-funciona-hoje-e-amanha.md"
+  },
+  {
+   "date": "2025-12-02",
+   "slug": "sustentabilidade-etica-e-proposito",
+   "title": "Sustentabilidade, ética e propósito: como as marcas estão ajustando seu marketing para 2026",
+   "author": "Victor Zardini",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/sustentabilidade-etica-e-proposito/",
+   "words": 764,
+   "file": "2025-12-02_sustentabilidade-etica-e-proposito.md"
+  },
+  {
+   "date": "2025-11-26",
+   "slug": "campanhas-sazonais-o-ano-inteiro-como-planejar-acoes-alem-da-black-friday",
+   "title": "Campanhas sazonais o ano inteiro: como planejar ações além da Black Friday",
+   "author": "David Borges",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/campanhas-sazonais-o-ano-inteiro-como-planejar-acoes-alem-da-black-friday/",
+   "words": 725,
+   "file": "2025-11-26_campanhas-sazonais-o-ano-inteiro-como-planejar-acoes-alem-da-black-friday.md"
+  },
+  {
+   "date": "2025-11-17",
+   "slug": "atendimento-ia",
+   "title": "Chatbots & Voz: como o atendimento por IA está mudando o marketing de relacionamento",
+   "author": "David Borges",
+   "cats": "IA",
+   "link": "https://www.prospecta.digital/conteudo/atendimento-ia/",
+   "words": 691,
+   "file": "2025-11-17_atendimento-ia.md"
+  },
+  {
+   "date": "2025-11-07",
+   "slug": "humanos-ou-algoritmos",
+   "title": "Humanos ou algoritmos: quem você quer encantar com seu conteúdo?",
+   "author": "David Borges",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/humanos-ou-algoritmos/",
+   "words": 533,
+   "file": "2025-11-07_humanos-ou-algoritmos.md"
+  },
+  {
+   "date": "2025-10-31",
+   "slug": "estrategia-de-midia-paga",
+   "title": "Veja como planejar sua estratégia de mídia paga com previsibilidade",
+   "author": "David Borges",
+   "cats": "Leads, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/estrategia-de-midia-paga/",
+   "words": 920,
+   "file": "2025-10-31_estrategia-de-midia-paga.md"
+  },
+  {
+   "date": "2025-10-14",
+   "slug": "como-aparecer-nas-ias",
+   "title": "Como aparecer nas IAs? O novo jogo da visibilidade digital (e como se posicionar para ele)",
+   "author": "Nayara Maira",
+   "cats": "SEO",
+   "link": "https://www.prospecta.digital/conteudo/como-aparecer-nas-ias/",
+   "words": 749,
+   "file": "2025-10-14_como-aparecer-nas-ias.md"
+  },
+  {
+   "date": "2025-09-30",
+   "slug": "como-criar-um-site",
+   "title": "Como criar um site? Veja nossas dicas para não errar na base da sua presença digital",
+   "author": "Victor Zardini",
+   "cats": "Leads, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/como-criar-um-site/",
+   "words": 927,
+   "file": "2025-09-30_como-criar-um-site.md"
+  },
+  {
+   "date": "2025-09-22",
+   "slug": "como-aumentar-o-ticket-medio",
+   "title": "Como aumentar o ticket médio: veja dicas!",
+   "author": "Carol Fernandes",
+   "cats": "Business, CRM, KPIs, Leads",
+   "link": "https://www.prospecta.digital/conteudo/como-aumentar-o-ticket-medio/",
+   "words": 751,
+   "file": "2025-09-22_como-aumentar-o-ticket-medio.md"
+  },
+  {
+   "date": "2025-09-08",
+   "slug": "marketing-para-industrias-estrategias-certeiras",
+   "title": "Marketing para Indústrias: estratégias certeiras",
+   "author": "David Borges",
+   "cats": "Business, CRM, Leads, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/marketing-para-industrias-estrategias-certeiras/",
+   "words": 933,
+   "file": "2025-09-08_marketing-para-industrias-estrategias-certeiras.md"
+  },
+  {
+   "date": "2025-09-01",
+   "slug": "google-ai-mode-anuncios-serao-permitidos",
+   "title": "Google AI Mode: anúncios serão permitidos",
+   "author": "Fernanda Danilaits",
+   "cats": "Business, KPIs, Leads, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/google-ai-mode-anuncios-serao-permitidos/",
+   "words": 718,
+   "file": "2025-09-01_google-ai-mode-anuncios-serao-permitidos.md"
+  },
+  {
+   "date": "2025-08-25",
+   "slug": "inbound-marketing-o-que-e",
+   "title": "Inbound marketing: o que é e como funciona?",
+   "author": "Nayara Maira",
+   "cats": "Marketing, SEO",
+   "link": "https://www.prospecta.digital/conteudo/inbound-marketing-o-que-e/",
+   "words": 958,
+   "file": "2025-08-25_inbound-marketing-o-que-e.md"
+  },
+  {
+   "date": "2025-08-18",
+   "slug": "dia-internacional-do-blog-entenda-a-ferramenta",
+   "title": "Dia internacional do blog: por que investir nesta ferramenta de marketing?",
+   "author": "Flaviana Ribeiro",
+   "cats": "Marketing, SEO",
+   "link": "https://www.prospecta.digital/conteudo/dia-internacional-do-blog-entenda-a-ferramenta/",
+   "words": 834,
+   "file": "2025-08-18_dia-internacional-do-blog-entenda-a-ferramenta.md"
+  },
+  {
+   "date": "2025-08-11",
+   "slug": "check-list-franquias-de-alimentos",
+   "title": "Check List: como aplicá-lo em franquias de alimentos",
+   "author": "David Borges",
+   "cats": "Franquias, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/check-list-franquias-de-alimentos/",
+   "words": 993,
+   "file": "2025-08-11_check-list-franquias-de-alimentos.md"
+  },
+  {
+   "date": "2025-07-28",
+   "slug": "vantagens-do-marketing-digital-e-como-fazer",
+   "title": "Marketing digital: vantagens, como fazer, estratégias, exemplos de sucesso",
+   "author": "David Borges",
+   "cats": "CRM, Leads, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/vantagens-do-marketing-digital-e-como-fazer/",
+   "words": 1083,
+   "file": "2025-07-28_vantagens-do-marketing-digital-e-como-fazer.md"
+  },
+  {
+   "date": "2025-07-21",
+   "slug": "marketing-de-conteudo-para-franquias",
+   "title": "Conquiste mais leads com o Marketing de Conteúdo para franquias",
+   "author": "Nayara Maira",
+   "cats": "Franquias, Leads, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/marketing-de-conteudo-para-franquias/",
+   "words": 862,
+   "file": "2025-07-21_marketing-de-conteudo-para-franquias.md"
+  },
+  {
+   "date": "2025-07-14",
+   "slug": "gerar-leads-conheca-ferramentas",
+   "title": "Utilize as ferramentas certas para gerar leads",
+   "author": "Nayara Maira",
+   "cats": "Leads, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/gerar-leads-conheca-ferramentas/",
+   "words": 1351,
+   "file": "2025-07-14_gerar-leads-conheca-ferramentas.md"
+  },
+  {
+   "date": "2025-07-07",
+   "slug": "geracao-de-leads-google-ads",
+   "title": "Passo a passo para a geração de leads com o Google Ads",
+   "author": "David Borges",
+   "cats": "Leads, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/geracao-de-leads-google-ads/",
+   "words": 1209,
+   "file": "2025-07-07_geracao-de-leads-google-ads.md"
+  },
+  {
+   "date": "2025-06-30",
+   "slug": "jornada-do-consumidor-como-montar",
+   "title": "Como montar a jornada do consumidor da sua empresa?",
+   "author": "David Borges",
+   "cats": "Leads, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/jornada-do-consumidor-como-montar/",
+   "words": 948,
+   "file": "2025-06-30_jornada-do-consumidor-como-montar.md"
+  },
+  {
+   "date": "2025-06-23",
+   "slug": "o-que-e-um-funil-de-vendas",
+   "title": "Saiba o que é um funil de vendas de forma descomplicada",
+   "author": "David Borges",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/o-que-e-um-funil-de-vendas/",
+   "words": 908,
+   "file": "2025-06-23_o-que-e-um-funil-de-vendas.md"
+  },
+  {
+   "date": "2025-06-16",
+   "slug": "estrategista-digital-entenda-o-que-e",
+   "title": "Estrategista digital: por que um atendimento estratégico vale ouro atualmente?",
+   "author": "Flaviana Ribeiro",
+   "cats": "CRM, Leads, Marketing, SEO",
+   "link": "https://www.prospecta.digital/conteudo/estrategista-digital-entenda-o-que-e/",
+   "words": 789,
+   "file": "2025-06-16_estrategista-digital-entenda-o-que-e.md"
+  },
+  {
+   "date": "2025-06-09",
+   "slug": "o-que-significa-ctr",
+   "title": "O que significa CTR? Descubra e domine o Google",
+   "author": "David Borges",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/o-que-significa-ctr/",
+   "words": 1053,
+   "file": "2025-06-09_o-que-significa-ctr.md"
+  },
+  {
+   "date": "2025-06-02",
+   "slug": "economia-da-atencao",
+   "title": "Economia da atenção: o que tem a ver com marketing?",
+   "author": "David Borges",
+   "cats": "Marketing, Sem categoria",
+   "link": "https://www.prospecta.digital/conteudo/economia-da-atencao/",
+   "words": 1018,
+   "file": "2025-06-02_economia-da-atencao.md"
+  },
+  {
+   "date": "2025-05-26",
+   "slug": "marketing-de-conteudo-conheca-4-vantagens-2",
+   "title": "Marketing de conteúdo: conheça 4 vantagens dessa estratégia para a sua indústria",
+   "author": "Nayara Maira",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/marketing-de-conteudo-conheca-4-vantagens-2/",
+   "words": 875,
+   "file": "2025-05-26_marketing-de-conteudo-conheca-4-vantagens-2.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "vendarketing-conceitos-e-beneficios",
+   "title": "Vendarketing: conceitos e benefícios para o seu negócio",
+   "author": "David Borges",
+   "cats": "Leads, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/vendarketing-conceitos-e-beneficios/",
+   "words": 1634,
+   "file": "2025-05-19_vendarketing-conceitos-e-beneficios.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "inbound-e-outbound-marketing-entenda",
+   "title": "Aprenda a diferença entre Inbound e Outbound Marketing",
+   "author": "Flaviana Ribeiro",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/inbound-e-outbound-marketing-entenda/",
+   "words": 1523,
+   "file": "2025-05-19_inbound-e-outbound-marketing-entenda.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "motivos-para-fazer-um-site-empresa",
+   "title": "5 motivos pelos quais sua empresa deve ter um site",
+   "author": "David Borges",
+   "cats": "Marketing, SEO, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/motivos-para-fazer-um-site-empresa/",
+   "words": 747,
+   "file": "2025-05-19_motivos-para-fazer-um-site-empresa.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "facebook-franquia-como-usar",
+   "title": "Como utilizar o Facebook a favor da sua franquia",
+   "author": "David Borges",
+   "cats": "Franquias, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/facebook-franquia-como-usar/",
+   "words": 861,
+   "file": "2025-05-19_facebook-franquia-como-usar.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "melhore-seu-processo-de-vendas",
+   "title": "Melhore seu processo de vendas criando uma buyer persona",
+   "author": "David Borges",
+   "cats": "Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/melhore-seu-processo-de-vendas/",
+   "words": 903,
+   "file": "2025-05-19_melhore-seu-processo-de-vendas.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "jornada-do-cliente-e-customer-success-2",
+   "title": "Veja a relação entre jornada do cliente e customer success",
+   "author": "Flaviana Ribeiro",
+   "cats": "Sem categoria",
+   "link": "https://www.prospecta.digital/conteudo/jornada-do-cliente-e-customer-success-2/",
+   "words": 826,
+   "file": "2025-05-19_jornada-do-cliente-e-customer-success-2.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "como-atrair-franqueados-pelo-site",
+   "title": "5 dicas para otimizar seu site e atrair franqueados",
+   "author": "David Borges",
+   "cats": "Franquias, Leads, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/como-atrair-franqueados-pelo-site/",
+   "words": 780,
+   "file": "2025-05-19_como-atrair-franqueados-pelo-site.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "captura-de-lead-veja-modelos-2-2",
+   "title": "Veja novos modelos de captura de lead e nutrição de lead",
+   "author": "David Borges",
+   "cats": "Leads, Marketing",
+   "link": "https://www.prospecta.digital/conteudo/captura-de-lead-veja-modelos-2-2/",
+   "words": 1194,
+   "file": "2025-05-19_captura-de-lead-veja-modelos-2-2.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "financas-para-franquias",
+   "title": "12 dicas valiosas de finanças para franquias",
+   "author": "David Borges",
+   "cats": "Franquias, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/financas-para-franquias/",
+   "words": 571,
+   "file": "2025-05-19_financas-para-franquias.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "inovacao-industria-importancia-2",
+   "title": "A importância da inovação para o sucesso da sua indústria",
+   "author": "David Borges",
+   "cats": "Leads, Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/inovacao-industria-importancia-2/",
+   "words": 593,
+   "file": "2025-05-19_inovacao-industria-importancia-2.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "plano-de-conteudo-veja-como-e-importante-na-sua-estrategia",
+   "title": "Plano de conteúdo: veja como é importante na sua estratégia",
+   "author": "Flaviana Ribeiro",
+   "cats": "Sem categoria",
+   "link": "https://www.prospecta.digital/conteudo/plano-de-conteudo-veja-como-e-importante-na-sua-estrategia/",
+   "words": 1791,
+   "file": "2025-05-19_plano-de-conteudo-veja-como-e-importante-na-sua-estrategia.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "dicas-para-criar-uma-campanha-eficiente-inbound-marketing",
+   "title": "Dicas para criar uma campanha eficiente com Inbound Marketing",
+   "author": "Flaviana Ribeiro",
+   "cats": "Marketing",
+   "link": "https://www.prospecta.digital/conteudo/dicas-para-criar-uma-campanha-eficiente-inbound-marketing/",
+   "words": 1124,
+   "file": "2025-05-19_dicas-para-criar-uma-campanha-eficiente-inbound-marketing.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "ideias-de-marketing-para-vendas",
+   "title": "Conheça 5 ideias de marketing para vendas",
+   "author": "Flaviana Ribeiro",
+   "cats": "Marketing, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/ideias-de-marketing-para-vendas/",
+   "words": 803,
+   "file": "2025-05-19_ideias-de-marketing-para-vendas.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "internacionalizar-sua-franquia-descubra-como",
+   "title": "Aprenda como internacionalizar sua franquia",
+   "author": "David Borges",
+   "cats": "Franquias",
+   "link": "https://www.prospecta.digital/conteudo/internacionalizar-sua-franquia-descubra-como/",
+   "words": 655,
+   "file": "2025-05-19_internacionalizar-sua-franquia-descubra-como.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "saiba-como-gerar-leads-para-a-sua-empresa-com-o-facebook-ads",
+   "title": "Saiba como gerar leads para a sua empresa com o Facebook Ads",
+   "author": "David Borges",
+   "cats": "ADS, redes sociais, Vendas",
+   "link": "https://www.prospecta.digital/conteudo/saiba-como-gerar-leads-para-a-sua-empresa-com-o-facebook-ads/",
+   "words": 1862,
+   "file": "2025-05-19_saiba-como-gerar-leads-para-a-sua-empresa-com-o-facebook-ads.md"
+  },
+  {
+   "date": "2025-05-19",
+   "slug": "webinar-o-que-e-e-com-gerar-leads",
+   "title": "Webinar: o que é e como gerar leads por meio dele",
+   "author": "Flaviana Ribeiro",
+   "cats": "Leads",
+   "link": "https://www.prospecta.digital/conteudo/webinar-o-que-e-e-com-gerar-leads/",
+   "words": 864,
+   "file": "2025-05-19_webinar-o-que-e-e-com-gerar-leads.md"
+  }
+ ],
+ "wp_pages": [
+  {
+   "date": "2026-06-30",
+   "slug": "home",
+   "title": "Blog sobre expansão de franquias",
+   "author": "Prospecta (prospectadev)",
+   "cats": "",
+   "link": "https://www.prospecta.digital/conteudo/",
+   "words": 0,
+   "file": "home.md"
+  },
+  {
+   "date": "2026-06-30",
+   "slug": "blog-2",
+   "title": "Blog",
+   "author": "Prospecta (prospectadev)",
+   "cats": "",
+   "link": "https://www.prospecta.digital/conteudo/blog-2/",
+   "words": 0,
+   "file": "blog-2.md"
+  },
+  {
+   "date": "2026-06-09",
+   "slug": "politica-de-privacidade",
+   "title": "Política de Privacidade",
+   "author": "Prospecta (prospectadev)",
+   "cats": "",
+   "link": "https://www.prospecta.digital/conteudo/politica-de-privacidade/",
+   "words": 1161,
+   "file": "politica-de-privacidade.md"
+  },
+  {
+   "date": "2025-05-20",
+   "slug": "lgpd",
+   "title": "LGPD",
+   "author": "Prospecta (prospectadev)",
+   "cats": "",
+   "link": "https://www.prospecta.digital/conteudo/lgpd/",
+   "words": 1874,
+   "file": "lgpd.md"
+  },
+  {
+   "date": "2024-01-18",
+   "slug": "blog",
+   "title": "Blog Prospecta",
+   "author": "Prospecta (prospectadev)",
+   "cats": "",
+   "link": "https://www.prospecta.digital/conteudo/blog/",
+   "words": 0,
+   "file": "blog.md"
+  }
+ ],
+ "cats": {
+  "92": "ADS",
+  "180": "Business",
+  "242": "Conteúdo",
+  "26": "CRM",
+  "25": "CRM",
+  "17": "Franquias",
+  "179": "IA",
+  "36": "KPIs",
+  "3": "Leads",
+  "4": "Marketing",
+  "181": "Neural Networks",
+  "62": "Persona",
+  "66": "redes sociais",
+  "1": "Sem categoria",
+  "15": "SEO",
+  "182": "Technology",
+  "183": "Uncategorized",
+  "10": "Vendas"
+ },
+ "users": {}
+}

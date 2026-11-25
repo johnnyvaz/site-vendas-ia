@@ -1,0 +1,13 @@
+User-agent: *
+Disallow:
+
+# Sitemap'i Google'a bildiriyoruz
+Sitemap: https://funildevendas.com.br/sitemap.xml
+
+# Crawl hızını sınırlıyoruz, spam gibi algılanmaması için
+Crawl-delay: 5
+
+# Belirli dosyaların indekslenmesine izin
+Allow: /images/
+Allow: /css/
+Allow: /js/
