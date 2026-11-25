@@ -24,7 +24,7 @@ function dataPorExtenso(iso: string) {
 }
 
 const GuiaIAVendas = () => {
-  useHead('/');
+  useHead('/ia-para-vendas');
 
   return (
     <LayoutGuia pagina="guia" semTopo>

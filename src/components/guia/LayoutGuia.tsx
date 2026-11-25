@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import './guia.css';
-import { AUTOR, EMAIL_DOMINIO, MAILTO_DOMINIO, linkMentoria } from '@/conteudo/site';
+import { AUTOR, linkMentoria } from '@/conteudo/site';
 
 type Pagina = 'guia' | 'agente' | 'outra';
 
 const NAV: { pagina: Pagina; href: string; rotulo: string }[] = [
-  { pagina: 'guia', href: '/', rotulo: 'IA para vendas' },
+  { pagina: 'guia', href: '/ia-para-vendas', rotulo: 'IA para vendas' },
   { pagina: 'agente', href: '/agente-de-ia-para-vendas', rotulo: 'Agente de IA para vendas' },
 ];
 
@@ -26,9 +26,9 @@ export function LayoutGuia({
       {!semTopo && (
       <header className="gv-topo">
         <div className="gv-topo-interno">
-          <Link to="/" className="gv-marca" aria-label="vendas.ia.br — início">
+          <Link to="/" className="gv-marca" aria-label="Vendas IA — início">
             <svg viewBox="0 0 32 24" aria-hidden="true"><path d="M2 22 L30 2 L30 22 Z" /></svg>
-            <span>vendas.ia.br</span>
+            <span>Vendas IA</span>
           </Link>
           <nav className="gv-nav" aria-label="Principal">
             {NAV.map((item) => (
@@ -56,14 +56,11 @@ export function LayoutGuia({
             </p>
           </div>
           <nav aria-label="Rodapé">
-            <p><Link to="/">IA para vendas: o guia</Link></p>
+            <p><Link to="/">Vendas IA</Link></p>
+            <p><Link to="/ia-para-vendas">IA para vendas: o guia</Link></p>
             <p><Link to="/agente-de-ia-para-vendas">Agente de IA para vendas</Link></p>
             <p><Link to="/politica-privacidade">Política de privacidade</Link></p>
           </nav>
-          <p className="gv-dominio">
-            Este domínio está à venda. Propostas: <a href={MAILTO_DOMINIO}>{EMAIL_DOMINIO}</a> ·{' '}
-            <Link to="/dominio-a-venda">detalhes</Link>
-          </p>
         </div>
       </footer>
     </div>

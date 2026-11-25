@@ -1,15 +1,14 @@
 /**
- * Constantes do guia "IA para vendas" (vendas.ia.br).
+ * Constantes do site vendas.ia.br.
  *
- * Desde 2026-11-17 o domínio é página de conteúdo: o guia ensina o time
- * comercial a usar IA no dia a dia e aponta para a mentoria de IA da
- * Geniaria. A venda do domínio continua aberta, num bloco discreto do rodapé
- * e na página /dominio-a-venda.
+ * Desde 2026-11-25 o domínio é o site da Vendas IA: o negócio de Melissa
+ * (método de vendas, a Escada de Vendas) e Johnny Vaz (tecnologia). O guia
+ * "IA para vendas" continua no ar em /ia-para-vendas, como conteúdo.
  */
 
 export const SITE_URL = 'https://vendas.ia.br';
-export const SITE_NOME = 'vendas.ia.br';
-export const EMAIL_DOMINIO = 'contato@johnnyvaz.com.br';
+export const SITE_NOME = 'Vendas IA';
+export const MARCA = 'Vendas IA';
 
 export const AUTOR = {
   nome: 'Johnny Vaz',
@@ -19,10 +18,26 @@ export const AUTOR = {
 } as const;
 
 export const PUBLICADO_EM = '2026-11-17';
-export const ATUALIZADO_EM = '2026-11-17';
+export const ATUALIZADO_EM = '2026-11-25';
+
+/** Política de privacidade: data do texto (a mudança de 2026-11-17 foi só de layout). Igual à data visível na página. */
+export const PRIVACIDADE_PUBLICADA_EM = '2026-02-04';
+export const PRIVACIDADE_ATUALIZADA_EM = '2026-02-04';
+
+/** WhatsApp comercial (Melissa). Só dígitos, com DDI. */
+export const WHATSAPP_NUMERO = '5516999666080';
+export const WHATSAPP_EXIBICAO = '+55 16 99966-6080';
+
+export function linkWhatsApp(mensagem?: string): string {
+  const base = `https://wa.me/${WHATSAPP_NUMERO}`;
+  return mensagem ? `${base}?text=${encodeURIComponent(mensagem)}` : base;
+}
+
+export const MENSAGEM_PADRAO =
+  'Olá, Melissa. Conheci a Vendas IA pelo site e gostaria de conversar sobre o processo comercial da nossa empresa.';
 
 /**
- * Link para a mentoria com UTM.
+ * Link para a mentoria com UTM (usado no guia).
  *
  * `utm_source=vendasia` está no vocabulário fechado da plataforma
  * (`SITES_PROPRIOS` em `PLATAFORMA-CURSOS/src/lib/tracking/vocabulary.ts`);
@@ -47,7 +62,3 @@ export function linkMentoria(posicao: PosicaoCta): string {
   });
   return `https://geniaria.com.br/mentoria?${p.toString()}`;
 }
-
-export const MAILTO_DOMINIO = `mailto:${EMAIL_DOMINIO}?subject=${encodeURIComponent(
-  'Proposta para o domínio vendas.ia.br'
-)}`;

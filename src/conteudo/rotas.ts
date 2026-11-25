@@ -6,8 +6,18 @@
  *  - o `scripts/prerender.mjs`, que escreve o HTML estático de cada rota no
  *    build — robô de busca e de IA leem o conteúdo sem executar JavaScript.
  */
-import { ATUALIZADO_EM, AUTOR, PUBLICADO_EM, SITE_NOME, SITE_URL, EMAIL_DOMINIO } from './site';
-import { FAQ_AGENTE, FAQ_GUIA, type Pergunta } from './faq';
+import {
+  ATUALIZADO_EM,
+  AUTOR,
+  PRIVACIDADE_ATUALIZADA_EM,
+  PRIVACIDADE_PUBLICADA_EM,
+  PUBLICADO_EM,
+  SITE_NOME,
+  SITE_URL,
+  WHATSAPP_NUMERO,
+} from './site';
+import { FAQ_HOME } from './home';
+import { FAQ_AGENTE, FAQ_GUIA } from './faq';
 
 export type Cabecalho = {
   caminho: string;
@@ -32,12 +42,12 @@ const SITE = {
   '@id': `${SITE_URL}/#website`,
   url: `${SITE_URL}/`,
   name: SITE_NOME,
-  description: 'Guia prático de inteligência artificial para times de vendas.',
+  description: 'Método comercial e inteligência artificial para empresas que vendem com processo.',
   inLanguage: 'pt-BR',
   author: { '@id': PESSOA['@id'] },
 };
 
-function faqPage(url: string, perguntas: Pergunta[]) {
+function faqPage(url: string, perguntas: { q: string; a: string }[]) {
   return {
     '@type': 'FAQPage',
     '@id': `${url}#faq`,
@@ -83,18 +93,54 @@ const AGENTE_TITULO = 'Agente de IA para vendas: o que é e quando vale a pena';
 const AGENTE_DESC =
   'O que é um agente de IA para vendas, a diferença para chatbot e assistente, o que ele faz na prática, quando vale, quando não vale e como começar sem expor o cliente.';
 
+const HOME_TITULO = 'Vendas IA · Método comercial e inteligência artificial';
+const HOME_DESC =
+  'A Vendas IA estrutura o processo comercial da sua empresa em seis degraus — do diagnóstico à retenção — e coloca a inteligência artificial para fazer o trabalho repetitivo, com cada número rastreável e pessoas no comando.';
+
+const ORGANIZACAO = {
+  '@type': 'ProfessionalService',
+  '@id': `${SITE_URL}/#organizacao`,
+  name: SITE_NOME,
+  url: `${SITE_URL}/`,
+  description: HOME_DESC,
+  areaServed: 'BR',
+  knowsAbout: ['Processo comercial', 'Inteligência artificial em vendas', 'CRM', 'Gestão comercial'],
+  founder: [{ '@type': 'Person', name: 'Melissa' }, { '@id': PESSOA['@id'] }],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    telephone: `+${WHATSAPP_NUMERO}`,
+    availableLanguage: 'Portuguese',
+  },
+};
+
 export const ROTAS: Record<string, Cabecalho> = {
   '/': {
     caminho: '/',
-    titulo: `${GUIA_TITULO} · vendas.ia.br`,
+    titulo: HOME_TITULO,
+    descricao: HOME_DESC,
+    ogTipo: 'website',
+    preloadImagem: '/videos/gemeo-loop-poster.jpg',
+    jsonLd: grafo(SITE, ORGANIZACAO, PESSOA, faqPage(`${SITE_URL}/`, FAQ_HOME)),
+  },
+  '/ia-para-vendas': {
+    caminho: '/ia-para-vendas',
+    // Sem o sufixo da marca: o título passaria de 60 caracteres e o Google cortaria
+    // (checagem titulo-tamanho do Sextante). O Google já mostra o nome do site.
+    titulo: GUIA_TITULO,
     descricao: GUIA_DESC,
     ogTipo: 'article',
     preloadImagem: '/palco/palco.webp',
-    jsonLd: grafo(SITE, PESSOA, artigo(`${SITE_URL}/`, GUIA_TITULO, GUIA_DESC), faqPage(`${SITE_URL}/`, FAQ_GUIA)),
+    jsonLd: grafo(
+      SITE,
+      PESSOA,
+      artigo(`${SITE_URL}/ia-para-vendas`, GUIA_TITULO, GUIA_DESC),
+      faqPage(`${SITE_URL}/ia-para-vendas`, FAQ_GUIA)
+    ),
   },
   '/agente-de-ia-para-vendas': {
     caminho: '/agente-de-ia-para-vendas',
-    titulo: `${AGENTE_TITULO} · vendas.ia.br`,
+    titulo: AGENTE_TITULO,
     descricao: AGENTE_DESC,
     ogTipo: 'article',
     jsonLd: grafo(
@@ -105,35 +151,46 @@ export const ROTAS: Record<string, Cabecalho> = {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'IA para vendas', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 1, name: 'IA para vendas', item: `${SITE_URL}/ia-para-vendas` },
           { '@type': 'ListItem', position: 2, name: 'Agente de IA para vendas', item: `${SITE_URL}/agente-de-ia-para-vendas` },
         ],
       }
     ),
   },
-  '/dominio-a-venda': {
-    caminho: '/dominio-a-venda',
-    titulo: 'vendas.ia.br — domínio premium à venda',
-    descricao:
-      'O domínio vendas.ia.br está à venda. Correspondência exata de vendas + inteligência artificial na extensão brasileira .ia.br. Propostas por e-mail.',
-    ogTipo: 'website',
-    jsonLd: grafo(SITE, {
-      '@type': 'Product',
-      '@id': `${SITE_URL}/dominio-a-venda#dominio`,
-      name: 'vendas.ia.br',
-      description:
-        'Domínio brasileiro à venda: correspondência exata de "vendas" na extensão .ia.br, dedicada a inteligência artificial. Transferência via Registro.br.',
-      category: 'Domain Name',
-      url: `${SITE_URL}/dominio-a-venda`,
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock',
-        priceCurrency: 'BRL',
-        url: `${SITE_URL}/dominio-a-venda`,
-        seller: { '@type': 'Person', name: AUTOR.nome, email: EMAIL_DOMINIO },
-      },
-    }),
-  },
+};
+
+const PRIVACIDADE_URL = `${SITE_URL}/politica-privacidade`;
+const PRIVACIDADE_DESC =
+  'Como a Vendas IA coleta, usa e protege dados pessoais conforme a LGPD: quais dados, para quê, por quanto tempo e como pedir acesso, correção ou exclusão.';
+
+ROTAS['/politica-privacidade'] = {
+  caminho: '/politica-privacidade',
+  titulo: 'Política de privacidade (LGPD) · Vendas IA',
+  descricao: PRIVACIDADE_DESC,
+  ogTipo: 'website',
+  jsonLd: grafo(
+    SITE,
+    ORGANIZACAO,
+    {
+      '@type': 'WebPage',
+      '@id': `${PRIVACIDADE_URL}#pagina`,
+      url: PRIVACIDADE_URL,
+      name: 'Política de privacidade',
+      description: PRIVACIDADE_DESC,
+      inLanguage: 'pt-BR',
+      isPartOf: { '@id': SITE['@id'] },
+      publisher: { '@id': ORGANIZACAO['@id'] },
+      datePublished: PRIVACIDADE_PUBLICADA_EM,
+      dateModified: PRIVACIDADE_ATUALIZADA_EM,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Vendas IA', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Política de privacidade', item: PRIVACIDADE_URL },
+      ],
+    }
+  ),
 };
 
 export function urlCanonica(caminho: string): string {

@@ -3,8 +3,9 @@
  *
  * Para cada rota de `ROTAS` (src/conteudo/rotas.ts), escreve um HTML com o
  * conteúdo já no <div id="root"> e o cabeçalho certo (title, description,
- * canonical, Open Graph, JSON-LD). O shell vazio vira `dist/spa.html`, que o
- * `_redirects` serve para as rotas não pré-renderizadas.
+ * canonical, Open Graph, JSON-LD). Endereço que não existe recebe `dist/404.html`
+ * (a página NotFound, com noindex), que o Netlify serve com status 404 de verdade —
+ * sem o fallback SPA com 200, que o Google trata como soft 404.
  *
  * Saída: `/` → dist/index.html; `/x` → dist/x.html (o Netlify serve `/x`
  * a partir de `x.html`, sem barra no fim).
@@ -23,7 +24,6 @@ const shell = readFileSync(resolve(dist, 'index.html'), 'utf8');
 if (!shell.includes('<!--head:inicio-->') || !shell.includes('<!--app-->')) {
   throw new Error('index.html sem os marcadores <!--head:inicio--> / <!--app-->');
 }
-writeFileSync(resolve(dist, 'spa.html'), shell);
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const OG_IMAGEM = 'https://vendas.ia.br/images/og-vendas-ia.jpg';
@@ -36,7 +36,7 @@ function cabecalho(r) {
   return `<!--head:inicio-->
     <title>${esc(r.titulo)}</title>
     <meta name="description" content="${esc(r.descricao)}" />
-    <meta name="author" content="Johnny Vaz" />
+    <meta name="author" content="Vendas IA" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="${url}" />
     <meta property="og:type" content="${r.ogTipo}" />
@@ -47,7 +47,7 @@ function cabecalho(r) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="vendas.ia.br" />
+    <meta property="og:site_name" content="Vendas IA" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${esc(r.titulo)}" />
     <meta name="twitter:description" content="${esc(r.descricao)}" />
@@ -65,5 +65,33 @@ for (const r of Object.values(ROTAS)) {
   writeFileSync(resolve(dist, arquivo), html);
   console.log(`prerender: ${r.caminho} → dist/${arquivo} (${Math.round(html.length / 1024)} KB)`);
 }
+
+// 404.html: renderiza a rota curinga (NotFound). Sem canonical e com noindex.
+const html404 = shell
+  .replace(
+    /<!--head:inicio-->[\s\S]*?<!--head:fim-->/,
+    `<!--head:inicio-->
+    <title>Página não encontrada · Vendas IA</title>
+    <meta name="robots" content="noindex, follow" />
+    <!--head:fim-->`
+  )
+  .replace('<!--app-->', render('/pagina-nao-encontrada'));
+writeFileSync(resolve(dist, '404.html'), html404);
+console.log('prerender: 404 → dist/404.html');
+
+// llms-full.txt: o llms.txt + cada página com descrição e as perguntas frequentes
+// (mesma fonte do JSON-LD FAQPage). Resumo completo para IA, sem rodar JavaScript.
+const faqDe = (r) =>
+  r.jsonLd
+    .flatMap((d) => d['@graph'] ?? [d])
+    .filter((n) => n['@type'] === 'FAQPage')
+    .flatMap((n) => n.mainEntity.map((q) => `### ${q.name}\n\n${q.acceptedAnswer.text}`));
+const blocos = Object.values(ROTAS).map((r) => {
+  const faq = faqDe(r);
+  return [`## ${r.titulo}`, `URL: ${urlCanonica(r.caminho)}`, r.descricao, ...(faq.length ? ['', ...faq] : [])].join('\n\n');
+});
+const llms = readFileSync(resolve(dist, 'llms.txt'), 'utf8').trimEnd();
+writeFileSync(resolve(dist, 'llms-full.txt'), `${llms}\n\n# Conteúdo das páginas\n\n${blocos.join('\n\n---\n\n')}\n`);
+console.log('prerender: llms-full.txt');
 
 rmSync(resolve(raiz, 'dist-server'), { recursive: true, force: true });

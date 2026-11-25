@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
@@ -33,4 +33,9 @@ import './index.css'
 //   });
 // }
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Páginas pré-renderizadas (scripts/prerender.mjs) são hidratadas: o HTML do
+// build é reaproveitado, sem remontar a página nem repetir as animações de entrada.
+// O shell vazio (só no `npm run dev`) monta do zero.
+const raiz = document.getElementById("root")!;
+if (raiz.firstElementChild) hydrateRoot(raiz, <App />);
+else createRoot(raiz).render(<App />);

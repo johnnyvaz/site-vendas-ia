@@ -1,0 +1,3 @@
+# Modelos de e-mail e relatório de build: acessíveis, mas fora do Google e das IAs.
+/email-*
+  X-Robots-Tag: noindex

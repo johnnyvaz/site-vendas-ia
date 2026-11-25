@@ -1,1 +1,3 @@
-/*    /spa.html   200
+/dominio-a-venda   /                 301
+# Sem fallback SPA: toda página pública é pré-renderizada (scripts/prerender.mjs).
+# Endereço inexistente recebe dist/404.html com status 404 (o Netlify serve sozinho).

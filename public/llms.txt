@@ -1,21 +1,22 @@
-# vendas.ia.br
+# Vendas IA
 
-> Guia prático em português sobre inteligência artificial para vendas: como o time comercial usa assistentes de IA (ChatGPT, Claude, Gemini, Copilot) em prospecção, abordagem, follow-up e CRM, o que nunca colar na IA por causa da LGPD, como conferir o texto antes de enviar ao cliente, e quando um agente de IA para vendas vale a pena. Escrito por Johnny Vaz, fundador da Geniaria. Para quem quer aprender com acompanhamento, o site indica a mentoria de IA da Geniaria.
+> A Vendas IA (vendas.ia.br) estrutura o processo comercial de empresas em seis degraus — a Escada de Vendas: diagnosticar, conhecer o cliente, construir a oferta, atrair e prospectar, converter, reter e crescer — e usa inteligência artificial para o trabalho repetitivo, com cada número rastreável e pessoas no comando. Sociedade entre Melissa (método e estratégia comercial) e Johnny Vaz (tecnologia e IA, fundador da Geniaria).
 
-## Guia
+## Em resumo
+- Para quem: empresas que querem vender com processo, incluindo operações de grande porte (começando por piloto controlado).
+- Método: Escada de Vendas, seis degraus em ordem; chão = pessoas, processos e ferramentas; corrimão = gestão e IA; regra do foco (um cliente ideal, uma região, um produto, um canal, um jeito de vender).
+- Tecnologia: gêmeo digital comercial (funil, CAC, LTV, payback, churn com origem rastreável), telemetria de aquisição, agentes de IA supervisionados (WhatsApp e e-mail), formação do time.
+- Princípios: a IA prepara e a pessoa decide; processo antes de ferramenta; nenhum número sem origem; LGPD por padrão; um gargalo por vez.
+- Formatos: Diagnóstico, Escada Completa, Time Comercial com IA, Workshop IA no Comercial, Acompanhamento. Escopo e investimento definidos após o diagnóstico.
 
-- [IA para vendas: como usar no dia a dia do time comercial](https://vendas.ia.br/): o que a IA faz bem e mal em vendas, modelos de pedido para pesquisa de conta, primeira mensagem e follow-up, uso com CRM, regras de dados pessoais (LGPD), checklist de conferência em cinco perguntas e plano para o time começar.
-- [Agente de IA para vendas: o que é e quando vale a pena](https://vendas.ia.br/agente-de-ia-para-vendas): diferença entre chatbot, assistente e agente; o que um agente faz na prática; quatro condições para valer a pena; riscos com cliente, LGPD e WhatsApp; como começar em modo rascunho.
-
-## Aprender com acompanhamento
-
-- [Mentoria de IA da Geniaria](https://geniaria.com.br/mentoria): mentoria de IA com Johnny Vaz para usar IA no trabalho com método e cuidado com os dados, sem programar — turma com data marcada, mentoria em grupo ou consultoria individual.
-
-## Autor
-
-- [Johnny Vaz](https://johnnyvaz.com.br/): engenheiro de software e especialista em inteligência artificial, fundador da [Geniaria](https://geniaria.com.br).
-
-## Domínio
-
-- [vendas.ia.br está à venda](https://vendas.ia.br/dominio-a-venda): propostas por e-mail para contato@johnnyvaz.com.br.
+## Páginas
+- [Vendas IA: método comercial e inteligência artificial](https://vendas.ia.br/)
+- [IA para vendas: como usar no dia a dia do time comercial](https://vendas.ia.br/ia-para-vendas): guia prático com prospecção, abordagem, follow-up, CRM e o que nunca colar na IA (LGPD).
+- [Agente de IA para vendas: o que é e quando vale a pena](https://vendas.ia.br/agente-de-ia-para-vendas)
 - [Política de privacidade](https://vendas.ia.br/politica-privacidade)
+
+## Mais
+- [Conteúdo completo para IA (páginas e perguntas frequentes)](https://vendas.ia.br/llms-full.txt)
+
+## Contato
+- WhatsApp: +55 16 99966-6080 (Melissa)

@@ -19,7 +19,8 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
     mode === 'production' && visualizer({
-      filename: 'dist/bundle-analysis.html',
+      // Fora de dist/: o relatório do bundle não deve ir para o ar.
+      filename: 'bundle-analysis.html',
       open: false,
       gzipSize: true,
       brotliSize: true,

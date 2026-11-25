@@ -85,11 +85,11 @@ export function DobraPalco({ ancoraGuia }: { ancoraGuia: string }) {
   return (
     <section className="dobra" aria-labelledby="titulo-guia">
       <header className="nav">
-        <Link className="logo" to="/" aria-label="vendas.ia.br — início">
+        <Link className="logo" to="/" aria-label="Vendas IA — início">
           <svg className="logo-marca" viewBox="0 0 32 24" aria-hidden="true">
             <path d="M2 22 L30 2 L30 22 Z" />
           </svg>
-          <span>vendas.ia.br</span>
+          <span>Vendas IA</span>
         </Link>
         <div className="nav-acoes" ref={refMenu}>
           <a className="btn btn-ciano" href={linkMentoria('menu')}>

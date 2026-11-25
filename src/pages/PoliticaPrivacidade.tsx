@@ -5,6 +5,7 @@
 
 import { Link } from 'react-router-dom';
 import { LayoutGuia } from '@/components/guia/LayoutGuia';
+import { useHead } from '@/hooks/useHead';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
@@ -24,6 +25,7 @@ import {
 } from 'lucide-react';
 
 const PoliticaPrivacidade = () => {
+  useHead('/politica-privacidade');
   const lastUpdated = '04 de Fevereiro de 2026';
 
   return (

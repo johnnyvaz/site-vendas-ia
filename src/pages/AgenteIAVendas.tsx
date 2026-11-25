@@ -11,7 +11,7 @@ const AgenteIAVendas = () => {
     <LayoutGuia pagina="agente">
       <article className="gv-artigo">
         <p className="gv-rotulo">
-          <Link to="/">IA para vendas</Link> · Agentes
+          <Link to="/ia-para-vendas">IA para vendas</Link> · Agentes
         </p>
         <h1>Agente de IA para vendas: o que é e quando vale a pena</h1>
 
@@ -68,7 +68,7 @@ const AgenteIAVendas = () => {
         </div>
         <p>
           Para a maior parte dos times, o assistente resolve o começo. O{' '}
-          <Link to="/">guia de IA para vendas</Link> mostra como usá-lo em prospecção, abordagem,
+          <Link to="/ia-para-vendas">guia de IA para vendas</Link> mostra como usá-lo em prospecção, abordagem,
           follow-up e CRM.
         </p>
 
@@ -199,7 +199,7 @@ const AgenteIAVendas = () => {
         </section>
 
         <p className="gv-proxima">
-          Volte ao guia: <Link to="/">IA para vendas: como usar no dia a dia do time comercial</Link>
+          Volte ao guia: <Link to="/ia-para-vendas">IA para vendas: como usar no dia a dia do time comercial</Link>
         </p>
       </article>
     </LayoutGuia>

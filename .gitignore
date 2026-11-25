@@ -27,3 +27,5 @@ dist-ssr
 # Ferramentas locais
 .playwright-cli/
 dist-server
+
+bundle-analysis.html
